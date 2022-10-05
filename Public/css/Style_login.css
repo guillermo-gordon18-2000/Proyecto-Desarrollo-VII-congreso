@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+:root{
+--color-primary         :#7380ec;
+--color-danger          :#ff7782;
+--color-success         :#41f1b6;
+--color-warning         :#ffbb55;
+--color-info-dark       :#7d8da1;
+--color-info-light      :#dce1eb;
+--color-dark            :#363949;
+--color-light           :rgba(132,139,200,0.18);
+--color-primary-variant :#111e88;
+--color-darck-variant   :#677483;
+
+/*--color-background      :#f6f6f9;*/
+--color-background   :#f6f6f9;            /* #201b22*/
+--color-white        :#f0ffffde;
+--color-LOGIN-Text   :#7a1c79;         /* #77ffc0*/ 
+--color-card-login   : #7a1c79;           /* #2f2841*/
+
+
+--card-border-radius    :2rem;
+--border-radius-1       :0.4rem;
+--border-radius-2       :0.8rem;
+--border-radius-3       :1.2rem;
+
+--card-padding          :1.8rem;
+--padding-1             :1.2rem;
+
+--box-shadow            : 0 2rem 3rem var(--color-light)
+}
+/*======================= DARK THEME =============*/
+.dark-theme-variables{
+--color-background:#201b22;
+--color-white:#202528;
+--color-dark:#edeffd;
+--color-darck-variant:#a3bdcc;
+--color-light:rgba(0,0,0,0.4);
+--box-shadow :0 2rem 3rem var(var(--color-light));
+}
+
+
+                                   /* 
+                                               oooooooooo.    .oooooo.   oooooooooo.   oooooo   oooo 
+                                               `888'   `Y8b  d8P'  `Y8b  `888'   `Y8b   `888.   .8'  
+                                                888     888 888      888  888      888   `888. .8'   
+                                                888oooo888' 888      888  888      888    `888.8'    
+                                                888    `88b 888      888  888      888     `888'     
+                                                888    .88P `88b    d88'  888     d88'      888      
+                                               o888bood8P'   `Y8bood8P'  o888bood8P'       o888o     
+                                                      
+
+*/                    
+
+
+body{
+
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+
+
+
+                                   /* 
+                                              ooo        ooooo       .o.       ooooo ooooo      ooo 
+                                             `88.       .888'      .888.      `888' `888b.     `8' 
+                                             888b     d'888      .8"888.      888   8 `88b.    8  
+                                            8 Y88. .P  888     .8' `888.     888   8   `88b.  8  
+                                           8  `888'   888    .88ooo8888.    888   8     `88b.8  
+                                          8    Y     888   .8'     `888.   888   8       `888  
+                                        o8o        o888o o88o     o8888o o888o o8o        `8  
+   
+                                                      
+
+*/  
+ 
+.main-login{
+
+    width: 100vw;
+    height: 100vh;
+    background: var(--color-background); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-login{
+   width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    flex-direction: column;
+}
+
+.left-12{
+   width: 50vw;
+    height: 100vh;
+    display: block;
+    justify-content: center;
+    align-items: center;  
+    flex-direction: column;
+}
+
+
+                                   /* 
+                                               oooooooooo.    .oooooo.   oooooooooo.   oooooo   oooo 
+                                               `888'   `Y8b  d8P'  `Y8b  `888'   `Y8b   `888.   .8'  
+                                                888     888 888      888  888      888   `888. .8'   
+                                                888oooo888' 888      888  888      888    `888.8'    
+                                                888    `88b 888      888  888      888     `888'     
+                                                888    .88P `88b    d88'  888     d88'      888      
+                                               o888bood8P'   `Y8bood8P'  o888bood8P'       o888o     
+                                                      
+
+*/  
+
+                 
+
+
+
+.left-login > h1 {
+    font-size: 3vw;
+   Color:var(--color-LOGIN-Text );                
+}
+
+.left-login-image{
+    width: 35vw;
+}
+
+
+.right-login {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+.card-login{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    flex-direction: column;
+    padding: 30px 35px;
+    background: var(--color-card-login) ;                          /*======================= DARK THEME =============*/
+    border-radius:20px ;
+    box-shadow: 0px 10px 40px #00000065; 
+}
+
+.card-login > h1 {
+   color:var(--color-info-light );                                  /*======================= DARK THEME =============*/
+   font-weight: 800;
+   margin: 0;
+}
+
+
+.h1-label{
+     font-size: 4vw;
+     margin: 20px;             
+}
+
+
+
+.card-loginh1label{
+    width: 60%;
+    display:table;
+    justify-content: center;
+    align-items: center;  
+    flex-direction: column;
+    padding: 30px 35px;
+    background: var(--color-card-login) ;                          /*======================= DARK THEME =============*/
+    border-radius:20px ;
+    box-shadow: 0px 10px 40px #00000065; 
+}
+
+
+.card-login-h1-label > h1 {
+   color:var(--color-info-light );                                  /*======================= DARK THEME =============*/
+   font-weight: 800;
+   margin: 0;
+}
+
+
+.textfield{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px;
+    
+}
+
+.textfield > input{
+   width: 100%;
+   border: none;
+   border-radius: 10px;
+   padding: 15px;
+   background: #f0ffffde;           /* #514869*/                               /*======================= DARK THEME =============*/
+   color:   var(#514869) ;  /* #f0ffffde */                                   /*======================= DARK THEME =============*/
+   font-size: 12pt;
+   box-shadow: 0px 10px 40px #00000056;
+   outline: none;
+   box-sizing: border-box;
+}
+
+.textfield > label{
+    color:#f0ffffde;                                         /*======================= DARK THEME =============*/
+    margin-bottom: 10px;
+}
+
+
+.textfield > input::placeholder{
+   color:#514869;     /* #f0ffffde */                                       /*======================= DARK THEME =============*/
+    
+}
+
+ .justify-content-center {
+    margin-top: 7px;
+ color:white;
+}
+
+.ml-2{
+color: #00ff88;
+
+}
+
+
+.btn-login{
+   width: 50%;
+   padding: 16px 0px;
+   margin:25px;
+   border: none;
+   border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 4px;
+    color:#2b134b;                                     /*======================= DARK THEME =============*/
+    background: #00ff88;                                /*======================= DARK THEME =============*/
+    cursor: pointer;
+    box-shadow: 0px 10px 40px 12px #00ff8052;
+}
+
+
+
+                                   /* 
+                                               oooooooooo.    .oooooo.   oooooooooo.   oooooo   oooo 
+                                               `888'   `Y8b  d8P'  `Y8b  `888'   `Y8b   `888.   .8'  
+                                                888     888 888      888  888      888   `888. .8'   
+                                                888oooo888' 888      888  888      888    `888.8'    
+                                                888    `88b 888      888  888      888     `888'     
+                                                888    .88P `88b    d88'  888     d88'      888      
+                                               o888bood8P'   `Y8bood8P'  o888bood8P'       o888o     
+                                                      
+
+*/  
+
+@media only  screen and (max-width:950px) {
+         .card-login{
+            width: 85%;
+         }
+
+         .card-loginh1label{
+            width: 85%;
+         }
+     
+     
+}
+
+@media only  screen and (max-width:600px) {
+       .main-login{
+        flex-direction: column;
+       } 
+       .left-login > h1{
+        display:none;
+       }    
+
+       .left-login{
+        width: 100%;
+        height: auto;
+       }
+
+        .right-login{
+        width: 100%;
+        height: auto;
+       }
+
+       .left-login-image{
+        width: 50vw;
+       }
+
+       .card-login{
+        width: 90%;
+       }
+
+}
