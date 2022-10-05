@@ -15,7 +15,7 @@
         <aside >
            <div class="top">
                  <div class="logo">
-                     <img src="Public/images/images-12/logo.png" >
+                     <img src="./images/logo.png" >
                      <h2 > T<span class="danger">WSB</span></h2>
                  </div>
                   
@@ -25,30 +25,30 @@
 
            </div>
                <div class="sidebar">
-                    <a href="#" class="active" >
-                        <span class="material-icons-sharp" >grid_view</span>
+                    <a href="#" class="active"  >
+                        <span class="material-icons-sharp">grid_view</span>
                          <h3>Dashoard</h3>
-                      </a>
-                        
 
                         
 
-                        <a href="?op=Analit" id="Btnana">
-                            <span class="material-icons-sharp" class="BtnAnalit">insights</span>
+                        
+
+                        <a href="?op=Analit">
+                            <span class="material-icons-sharp">insights</span>
                              <h3>Analytics</h3>
                         </a>
 
                        
 
 
-                        <a href="?op=report" id="BtReport">
-                            <span class="material-icons-sharp" class="BtnReport">report_gmailerrorred</span>
+                        <a href="?op=report">
+                            <span class="material-icons-sharp">report_gmailerrorred</span>
                              <h3>Report</h3>
                         </a>
 
 
-                        <a href="?op=Setting" id="BtnSettings" >
-                            <span class="material-icons-sharp" class="BtnSettings">settings</span>
+                        <a href="?op=Setting">
+                            <span class="material-icons-sharp">settings</span>
                              <h3>Settings</h3>
                         </a>
 
@@ -61,7 +61,7 @@
                              <h3>Logg out</h3>
                         </a>
                        
-                    
+                    </a>
                </div>
         </aside>
         <!----------------------- END OF ASIDE ------------------->
@@ -131,7 +131,93 @@
                       <!----------------------- END OF INCOME ------------------->
               </div>
                  <!----------------------- END OF INSIGHTS ------------------->
-                       <div class="recent-order">
+                          <div class="right">                     
+                  <div class="sales-analytics">
+                            <h2> CONFERENCA ACTUALES</h2>
+                            
+                            <div class="item online">
+                                <div class="icon">
+                                    <span class="material-icons-sharp">shopping_cart</span>
+                                </div>
+                                <div class="right">
+                                       <div class="info">
+                                        <h3>DELL</h3>
+                                        <small class="text-muted">Last 24 Hours</small>
+                                       </div>
+                                            <h3 class="font-12">EDIFICIO 1 </h3>
+                                       
+                                            <div class="item">
+                                            <span class="material-icons-sharp">person</span>
+                                            <h3>384/400</h3>
+                                             </div>
+                                </div>
+                            </div>
+
+                            <div class="item offline">
+                                <div class="icon">
+                                    <span class="material-icons-sharp">local_mall</span>
+                                </div>
+                                <div class="right">
+                                       <div class="info">
+                                        <h3>HUAWEI</h3>
+                                        <small class="text-muted">Last 24 Hours</small>
+                                      
+                                    </div>
+                                       <h3 class="font-12">EDIFICIO 1 </h3>
+
+                                       <div class="item">
+                                            <span class="material-icons-sharp">person</span>
+                                         <h3>384/400</h3>
+                                      </div>
+                                      
+                                </div>
+                            </div>
+
+                            <div class="item customers">
+                                <div class="icon">
+                                    <span class="material-icons-sharp">person</span>
+                                </div>
+                                <div class="right">
+                                       <div class="info">
+                                        <h3>SAMSUNG</h3>
+                                        <small class="text-muted">Last 24 Hours</small>
+                                       </div>
+                                            <h3 class="font-12">EDIFICIO 1 </h3>
+                                       <div class="item">
+                                            <span class="material-icons-sharp">person</span>
+                                         <h3>384/400</h3>
+                                      </div>
+                                </div>
+                            </div>
+
+                            <div class="item online">
+                                <div class="icon">
+                                    <span class="material-icons-sharp">shopping_cart</span>
+                                </div>
+                                <div class="right">
+                                       <div class="info">
+                                        <h3>COPA</h3>
+                                        <small class="text-muted">Last 24 Hours</small>
+                                       </div>
+                                            <h3 class="font-12">EDIFICIO 1 </h3>
+                                       <div class="item">
+                                            <span class="material-icons-sharp">person</span>
+                                         <h3>384/400</h3>
+                                      </div>
+                                </div>
+                            </div>
+
+                              <div class="item add-product">
+                                   <div>
+                                    <span class="material-icons-sharp">add</span>
+                                    <h3>Agregar Conferencias</h3>
+                                   </div>
+                              </div>
+
+                   </div>
+             </div>  
+                 
+                 <!--       <div class="recent-order">
                          <h2>Recent Orders</h2>
                            <table>
                               <thead>
@@ -152,12 +238,12 @@
                                              <td class="warning">Pending</td>
                                              <td class="primary">Details</td>
                                         </tr>  -->
-                                       
+                                   <!--               
                                     </tbody>
                            </table>
                         
                                    <a href="#">Show All</a>
-                       </div>
+                       </div> --> 
              </main>
 <!-------------------------------- END OF MAIN ------------------->
             <div class="right">
@@ -178,12 +264,13 @@
                         </div>
 
                          <div class="profile-photo">
-                            <img src="../Public/images/images-12/profile-1.jpg" >
+                            <img src="./images/profile-1.jpg" >
                          </div>
                      </div>
                 </div>
+            
 <!-------------------------------- END OF TOP ------------------->
-<!--  
+ 
                        <div class="recent-updates">
                            <h2>Recent Updates</h2>
                            <div class="updates">
@@ -193,7 +280,7 @@
                                  <img src="./images/profile-2.jpg" alt="">
                             </div>
                             <div class="message">
-                                <p><b>Muke Tyson</b> received his order of nation</p>
+                                <p><b>Guillermo Gordon</b> received his order of nation</p>
                                   <small class="text-muted">2 minutes ago </small>
                             </div>
                             </div>
@@ -203,7 +290,7 @@
                                      <img src="./images/profile-3.jpg" alt="">
                                 </div>
                                 <div class="message">
-                                    <p><b>Muke Tyson</b> received his order of nation</p>
+                                    <p><b>Astrid Balter</b> received his order of nation</p>
                                       <small class="text-muted">2 minutes ago </small>
                                 </div>
                                 </div>
@@ -213,59 +300,26 @@
                                          <img src="./images/profile-4.jpg" alt="">
                                     </div>
                                     <div class="message">
-                                        <p><b>Muke Tyson</b> received his order of nation</p>
+                                        <p><b>Juan Basques</b> received his order of nation</p>
                                           <small class="text-muted">2 minutes ago </small>
                                     </div>
                                 </div>
                            </div>
+
+                           
                        </div>
-                       -->
+                       
           <!-------------------------------- END OF UPDATE ------------------->
+          
                         <div class="sales-analytics">
-                            <h2>ANALITICA CONFERENCA</h2>
-                            <div class="item online">
-                                <div class="icon">
-                                    <span class="material-icons-sharp">shopping_cart</span>
-                                </div>
-                                <div class="right">
-                                       <div class="info">
-                                        <h3>DELL</h3>
-                                        <small class="text-muted">Last 24 Hours</small>
-                                       </div>
-                                       <h5 class="success">+39%</h5>
-                                       <h3>3849</h3>
-                                </div>
-                            </div>
+                            
+                           
 
-                            <div class="item offline">
-                                <div class="icon">
-                                    <span class="material-icons-sharp">local_mall</span>
-                                </div>
-                                <div class="right">
-                                       <div class="info">
-                                        <h3>HUAWEI</h3>
-                                        <small class="text-muted">Last 24 Hours</small>
-                                       </div>
-                                       <h5 class="danger">-39%</h5>
-                                       <h3>3849</h3>
-                                </div>
-                            </div>
+                           
 
-                            <div class="item customers">
-                                <div class="icon">
-                                    <span class="material-icons-sharp">person</span>
-                                </div>
-                                <div class="right">
-                                       <div class="info">
-                                        <h3>SAMSUNG</h3>
-                                        <small class="text-muted">Last 24 Hours</small>
-                                       </div>
-                                       <h5 class="success">+25%</h5>
-                                       <h3>835</h3>
-                                </div>
-                            </div>
-
-                            <div class="item online">
+                            
+                                       <!--  
+                            <div class="item onlin">
                                 <div class="icon">
                                     <span class="material-icons-sharp">shopping_cart</span>
                                 </div>
@@ -277,19 +331,20 @@
                                        <h5 class="success">+39%</h5>
                                        <h3>3849</h3>
                                 </div>
-                            </div>
+                            </div>-->
 
                               <div class="item add-product">
                                    <div>
                                     <span class="material-icons-sharp">add</span>
-                                    <h3>Add Product</h3>
+                                    <h3>Agregar Moderador</h3>
                                    </div>
                               </div>
 
                    </div>
             </div>
+
       </div>
-       <script src="Public/js/orders.js"></script>
-       <script src="Public/js/index.js"></script>
+      <script src="./orders.js"></script>
+       <script src="./index.js"></script>
 </body>
 </html>

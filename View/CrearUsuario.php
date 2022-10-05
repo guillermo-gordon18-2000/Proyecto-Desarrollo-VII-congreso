@@ -14,7 +14,7 @@
 
 
            
-           <form action="../Model/Peticiones.php" method="POST">
+           <form action="#" method="POST">
                   <div class="right-login">
                        
                   
@@ -25,32 +25,32 @@
                    
                      <div class="textfield">
                            <label for="usuario" >Nombre</label>
-                           <input type="text" name="usuario" placeholder="Usuario" action="Peticiones.php">
+                           <input type="text" name="usuario" placeholder="Nombre" action="Peticiones.php">
                      </div>  
 
                      <div class="textfield">
                            <label for="Contraseña">Apellido</label>
-                           <input type="password" name="Pasword" placeholder="Contraseña">
+                           <input type="text" name="Pasword" placeholder="Apellido">
                      </div> 
                      
                      <div class="textfield">
-                           <label for="Contraseña">Sexo</label>
-                           <input type="password" name="Pasword" placeholder="Contraseña">
+                           <label for="Contraseña">Correo</label>
+                           <input type="mail" name="Pasword" placeholder="Ejemplo@gmail.com">
                      </div> 
 
                      <div class="textfield">
-                           <label for="Contraseña">Edad</label>
+                           <label for="Contraseña">Contraseña</label>
                            <input type="password" name="Pasword" placeholder="Contraseña">
                      </div> 
 
 
                      <div class="textfield">
-                           <label for="Contraseña">Carrera</label>
-                           <input type="password" name="Pasword" placeholder="Contraseña">
+                           <label for="Contraseña">Contraseña</label>
+                           <input type="password" name="Pasword" placeholder="Repetir Contraseña">
                      </div> 
                          <button class="btn-login">Login</button>
                                  <div class="d-flex justify-content-center links">
-                                  ¿Aún no tiene cuenta? - <a href="?op=crear" class="ml-2"> Regístrese aquí </a>
+                                  ¿Ya tienes una cuenta ? - <a href="?op=Logg" class="ml-2"> Ingresar  </a>
                                  </div>
                       </div> 
                 

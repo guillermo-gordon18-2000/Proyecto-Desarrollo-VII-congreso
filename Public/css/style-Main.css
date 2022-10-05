@@ -140,6 +140,7 @@ h2{
     color: var(--color-warning)
  }
 
+
  aside{
    height: 100vh;
    
@@ -214,7 +215,7 @@ background: var(--color-light);
 color: var(--color-primary);
 margin-left :0;
  }
-
+ 
  aside .sidebar a.active::before{
    content: '';
    width: 6px;
@@ -223,10 +224,12 @@ margin-left :0;
 
  }
 
+
  aside .sidebar a.active span{
    color:var(--color-primary);
    margin-left:calc(1rem - 3px);
  }
+
 
  aside .sidebar a:hover{
     color: var(--color-primary);
@@ -237,7 +240,6 @@ margin-left :0;
 
  }
 
-
  aside .sidebar .message-count{
    background: var(--color-danger);
    color:white;
@@ -245,6 +247,7 @@ margin-left :0;
    font-size: 11px;
    border-radius: var(--border-radius-1);
  }
+
 
 
  /* ==============================   MAIN  ===================*/
@@ -289,6 +292,7 @@ padding: 0.5rem 1.6rem;
 
  }
 
+ 
  main .insights > div span {
      background: var(--color-primary);
      padding: 0.5rem;
@@ -303,11 +307,12 @@ padding: 0.5rem 1.6rem;
 
  }
 
+ 
  main .insights > div.income span {
     background: var(--color-success);
 
  }
- 
+
  main .insights > div .middle{
     display:flex;
     align-items: center;
@@ -522,12 +527,21 @@ justify-content: center;
       }
 
     /*========================SALES ANALYTICS=======================*/
-            
-    .right .sales-analytics{
+        
+    
+/*========================ANALITICA CONFERENCIA=======================*/
+
+
+
+
+
+.right .sales-analytics{
         margin-top: 2rem;
         color: var(--color-dark);
        
     }
+       
+
 
     .right .sales-analytics h2{
         margin-bottom: 0.8rem;
@@ -568,8 +582,19 @@ justify-content: center;
 
       }
       .right .sales-analytics .item.offline.icon{
+        
             background: var(--color-danger);
       }
+      
+             .font-12{text-align: center;
+                            margin-top:2%;
+                            display: flex;
+                                 font-size: 16px;
+                                                   } 
+
+                                              .info h3{
+                                          padding: 1rem;
+                                                   }
 
       .right .sales-analytics .item.customers .icon{
         background: var(--color-danger);
@@ -590,7 +615,7 @@ justify-content: center;
        
       }
       .right .sales-analytics .add-product div h3{
-        font-weight: 600;
+        font-weight: 800;
         
       }
 
@@ -598,7 +623,6 @@ justify-content: center;
       background: var(--color-primary);
       color:var(--color-white);
       }
-
 
 /*======================== MEDIA =======================*/
        @media screen and (max-width: 1200px){

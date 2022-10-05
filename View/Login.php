@@ -41,7 +41,7 @@
 
 
 
-           <form action="../Model/Peticiones.php" method="POST">
+           <form action="#" method="POST">
 
                   <!-- _    ___   ___ ___ _  _     ___ ___ ___ _  _ _____ 
                       | |  / _ \ / __|_ _| \| |___| _ \_ _/ __| || |_   _|

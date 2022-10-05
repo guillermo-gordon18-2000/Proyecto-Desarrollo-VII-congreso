@@ -15,7 +15,7 @@
         <aside >
            <div class="top">
                  <div class="logo">
-                     <img src="./images/logo.png" >
+                     <img src="Public/images/images-12/logo.png" >
                      <h2 > T<span class="danger">WSB</span></h2>
                  </div>
                   
@@ -26,29 +26,29 @@
            </div>
                <div class="sidebar">
                     <a href="?op=dash" >
-                        <span class="material-icons-sharp">grid_view</span>
+                        <span class="material-icons-sharp" >grid_view</span>
                          <h3>Dashoard</h3>
-
+                      </a>
                         
 
                         
 
-                        <a href="#" class="active">
-                            <span class="material-icons-sharp">insights</span>
+                        <a href="#" class="active"  >
+                            <span class="material-icons-sharp" class="BtnAnalit">insights</span>
                              <h3>Analytics</h3>
                         </a>
 
                        
 
 
-                        <a href="?op=report">
-                            <span class="material-icons-sharp">report_gmailerrorred</span>
+                        <a href="?op=report" id="BtReport">
+                            <span class="material-icons-sharp" class="BtnReport">report_gmailerrorred</span>
                              <h3>Report</h3>
                         </a>
 
 
-                        <a href="?op=Setting">
-                            <span class="material-icons-sharp">settings</span>
+                        <a href="?op=Setting" id="BtnSettings" >
+                            <span class="material-icons-sharp" class="BtnSettings">settings</span>
                              <h3>Settings</h3>
                         </a>
 
@@ -61,7 +61,7 @@
                              <h3>Logg out</h3>
                         </a>
                        
-                    </a>
+                    
                </div>
         </aside>
         <!----------------------- END OF ASIDE ------------------->
@@ -178,7 +178,7 @@
                         </div>
 
                          <div class="profile-photo">
-                            <img src="./images/profile-1.jpg" >
+                            <img src="../Public/images/images-12/profile-1.jpg" >
                          </div>
                      </div>
                 </div>
@@ -289,7 +289,7 @@
                    </div>
             </div>
       </div>
-      <script src="./orders.js"></script>
-       <script src="./index.js"></script>
+       <script src="Public/js/orders.js"></script>
+       <script src="Public/js/index.js"></script>
 </body>
 </html>
