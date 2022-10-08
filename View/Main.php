@@ -8,14 +8,14 @@
      <!-- MATERIAL ICONS -->
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
       <!-- STYLESHEET -->
-      <link rel="stylesheet" href="Public/css/style-Main.css">
+       <link rel="stylesheet" href="Public/css/style-Main.css">  
 </head>
 <body>
       <div class="container" >
         <aside >
            <div class="top">
                  <div class="logo">
-                     <img src="./images/logo.png" >
+                     <img src="Public/images/images-12/logo.png" >
                      <h2 > T<span class="danger">WSB</span></h2>
                  </div>
                   
@@ -264,7 +264,7 @@
                         </div>
 
                          <div class="profile-photo">
-                            <img src="./images/profile-1.jpg" >
+                            <img src="Public/images/images-12/profile-1.jpg" >
                          </div>
                      </div>
                 </div>
@@ -272,12 +272,13 @@
 <!-------------------------------- END OF TOP ------------------->
  
                        <div class="recent-updates">
-                           <h2>Recent Updates</h2>
+                           <h2>PERSONAL</h2>
                            <div class="updates">
 
                             <div class="update">
+                            
                             <div class="profile-photo">
-                                 <img src="./images/profile-2.jpg" alt="">
+                                 <img src="Public/images/images-12/profile-2.jpg" alt="">
                             </div>
                             <div class="message">
                                 <p><b>Guillermo Gordon</b> received his order of nation</p>
@@ -287,7 +288,7 @@
 
                             <div class="update">
                                 <div class="profile-photo">
-                                     <img src="./images/profile-3.jpg" alt="">
+                                     <img src="Public/images/images-12/profile-3.jpg" alt="">
                                 </div>
                                 <div class="message">
                                     <p><b>Astrid Balter</b> received his order of nation</p>
@@ -297,7 +298,7 @@
 
                                 <div class="update">
                                     <div class="profile-photo">
-                                         <img src="./images/profile-4.jpg" alt="">
+                                         <img src="Public/images/images-12/profile-4.jpg" alt="">
                                     </div>
                                     <div class="message">
                                         <p><b>Juan Basques</b> received his order of nation</p>

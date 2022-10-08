@@ -26,7 +26,7 @@ class Controller
  //------------Vista de Analiticas
      public function VistaAnalitica(){
 
-        require("View/Analytics.php");
+        require("View/Analytics.html");
 
     }
      

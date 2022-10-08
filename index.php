@@ -40,6 +40,6 @@ else{
 
     //Llamo al método por defecto del controlador
    // $controller->index();
-        $controller->index();
+        $controller->Mainvista();
 }
 ?>
