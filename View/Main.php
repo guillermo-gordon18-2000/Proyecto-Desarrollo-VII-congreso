@@ -345,7 +345,7 @@
             </div>
 
       </div>
-      <script src="./orders.js"></script>
-       <script src="./index.js"></script>
+      <script src="Public/js/orders.js"></script>
+       <script src="Public/js/index.js"></script>
 </body>
 </html>

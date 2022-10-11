@@ -6,14 +6,17 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Prototipo</title>
      <!-- MATERIAL ICONS -->
+     <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>-->
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    
+     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
       <!-- STYLESHEET -->
       <link rel="stylesheet" href="Public/css/style-Main.css">
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
 <body>
       <div class="container" >
         <aside >
@@ -69,101 +72,66 @@
                </div>
         </aside>
         <!----------------------- END OF ASIDE ------------------->
-             <main>
+             <main>   <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
               <h1>Graficos</h1>
               <div class="date">
                 <input type="date">
 
               </div>
               <div class =insights>
-                    <div class="sales">
+                   
+                
+                     
+                         
                         
-<div> 
-    <canvas id="myChart" width="18" height="18" background="black"></canvas>
-</div>
 
+            </div>   
+              <div id="chart" class="recent-order" > 
+                <script> var options = {
+                    series: [{
+                    name: 'DELL',
+                    data: [10, 29, 35, 51, 42, 20, 10]
+                  }, {
+                    name: 'Huawei',
+                    data: [11, 25, 30, 40, 36, 10, 5]
+                  },{
+                    name: 'Samsung',
+                    data: [13, 35, 45, 78, 12, 6, 2]
+                  },{
+                    name: 'Copa',
+                    data: [14, 25, 30, 35, 30, 10, 5]
+                  }],
+                    chart: {
+                    height: 400,
+                    weight: 400 ,
+                    type: 'area'
+                  },
+                  dataLabels: {
+                    enabled: false
+                  },
+                  stroke: {
+                    curve: 'smooth'
+                  },
+                  xaxis: {
+                    type: 'datetime',
+                    categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+                  },
+                  tooltip: {
+                    x: {
+                      format: 'dd/MM/yy HH:mm'
+                    },
+                  },
+                  };
+                  
+                  var chart = new ApexCharts(document.querySelector("#chart"), options);
+                  chart.render();</script>
 
-<script >
-const ctx = document.getElementById('myChart').getContext('2d');
-const myChart = new Chart(ctx, {
-    type: 'linear',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
-</script>
+             </div>    
 
-
-
-                    </div>
-                      <!----------------------- END OF Sales ------------------->
-                      <div class="expenses">
-                        <span class="material-icons-sharp">bar_chart</span>
-                        <div class="middle">
-                            <div class="lef">
-                                <h3>Total Asistieron</h3>
-                                <h1>350</h1>
-                            </div>
-                            <div class="progress">
-                                <svg>
-                                    <circle  cx='38' cy='38' r='36'></circle>
-                                </svg>
-                                <div class="number">
-                                  <p>62%</p>
-                                </div>
-                            </div>
-                        </div>
-                         <small class="text-muted">Last 24 Hours</small>
-                    </div>
+                     
+                   
                       <!----------------------- END OF EXPENSES ------------------->
-                      <div class="income">
-                        <span class="material-icons-sharp">stacked_line_chart</span>
-                        <div class="middle">
-                            <div class="lef">
-                                <h3>Total No Asistieron</h3>
-                                <h1>125</h1>
-                            </div>
-                            <div class="progress">
-                                <svg>
-                                    <circle  cx='38' cy='38' r='36'></circle>
-                                </svg>
-                                <div class="number">
-                                  <p>44%</p>
-                                </div>
-                            </div>
-                        </div>
-                         <small class="text-muted">Last 24 Hours</small>
-                    </div>
-                      <!----------------------- END OF INCOME ------------------->
-              </div>
+                      
                  <!----------------------- END OF INSIGHTS ------------------->
                        <div class="recent-order">
                          <h2>Recent Orders</h2>
@@ -323,12 +291,12 @@ const myChart = new Chart(ctx, {
                    </div>
             </div>
       </div>
-       <script src="Public/js/orders.js"></script>
-       <script src="Public/js/index.js"></script>
+    <!--     <script src="Public/js/orders.js"></script> -->
+     <script src="Public/js/index.js"></script>
+     <script src="Public/js/chart1.js"></script>
+ 
 
-
-
-       <script src="node_modules/chart.js/dist/chart.js" ></script>
+       
 
 
 </body>
