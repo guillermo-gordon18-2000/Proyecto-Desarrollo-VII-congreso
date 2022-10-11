@@ -60,6 +60,7 @@ body{
     overflow-x :hidden;
 }
 .container{
+   
 display: grid;
 width: 96%;
 margin: 0 auto;
@@ -142,12 +143,13 @@ h2{
 
 
  aside{
-   height: 100vh;
-   
+   height: 120vh;
+  
+ 
  }
 
  aside .top{
-   
+   position: fixed;
     display:flex;
     align-items: center;
     justify-content: space-between;
@@ -171,19 +173,26 @@ h2{
 
  /* ============================================ SIDEBAR ===================*/
 
- aside .sidebar{
-
+ .sidebar{
+   height: 90vh;
+   width: 26vh;
     
-    display:flex;
+    padding-left: 20px;
+ }
+ aside .sidebar{
+   
+   position: fixed;
     flex-direction: column;
-    height: 86vh;
-    position: relative;
-    top: 3rem;
+   
+ 
+    top: 7rem;
+
  }
 
  aside .h3{
+   position: fixed;
    font-weight:500 ;
-
+  
  }
 
  aside .sidebar a{
@@ -205,6 +214,7 @@ h2{
 
 
  aside .sidebar a:last-child{
+  
 position:absolute;
 bottom :2rem;
 width: 100%;
@@ -218,7 +228,7 @@ margin-left :0;
  
  aside .sidebar a.active::before{
    content: '';
-   width: 6px;
+   width: 8px;
    height: 100%;
    background:var(--color-primary) ;
 
@@ -251,7 +261,12 @@ margin-left :0;
 
 
  /* ==============================   MAIN  ===================*/
+
+
+
+
  main{
+
     margin-top: 1.4rem;
     color: var(--color-dark);
  }

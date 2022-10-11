@@ -65,7 +65,8 @@
                </div>
         </aside>
         <!----------------------- END OF ASIDE ------------------->
-             <main>
+      
+        <main>
               <h1>Dashoard</h1>
               <div class="date">
                 <input type="date">
@@ -345,6 +346,7 @@
             </div>
 
       </div>
+     
       <script src="Public/js/orders.js"></script>
        <script src="Public/js/index.js"></script>
 </body>
