@@ -41,7 +41,7 @@
 
 
 
-           <form action="#" method="POST">
+           <form action="./?op=acceder" method="POST">
 
                   <!-- _    ___   ___ ___ _  _     ___ ___ ___ _  _ _____ 
                       | |  / _ \ / __|_ _| \| |___| _ \_ _/ __| || |_   _|
@@ -53,7 +53,7 @@
                     <h1>LOGIN</h1>
                      <div class="textfield">
                            <label for="usuario" >usuario</label>
-                           <input type="text" name="usuario" placeholder="Usuario" action="Peticiones.php">
+                           <input type="text" name="Usuario" placeholder="Usuario" >
                      </div>  
 
                      <div class="textfield">

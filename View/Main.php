@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,7 +69,7 @@
         <!----------------------- END OF ASIDE ------------------->
       
         <main>
-              <h1>Dashoard</h1>
+              <h1>DASHBOARD</h1>
               <div class="date">
                 <input type="date">
 
@@ -299,7 +300,7 @@
                                 </div>
 
                                 <div class="update">
-                                    <div class="profile-photo">
+                                    <div class="profile-photo-profile">
                                          <img src="Public/images/images-12/profile-4.jpg" alt="">
                                     </div>
                                     <div class="message">

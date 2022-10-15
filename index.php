@@ -28,7 +28,10 @@ if (isset($_GET['op'])){ //
     }else if($opcion=="report"){
         $controller->VistaReporte();
 
-    }else if($opcion=="Setting"){
+    }elseif ($opcion=="acceder"){
+        //Llamo al método ver pasándole la clave que me están pidiendo
+        $controller->Ingresar();
+     }else if($opcion=="Setting"){
         $controller->VistaSettings();
 
     }else if($opcion=="Logg"){
@@ -40,6 +43,6 @@ else{
 
     //Llamo al método por defecto del controlador
    // $controller->index();
-        $controller->Mainvista();
+        $controller->index();
 }
 ?>

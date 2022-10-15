@@ -57,6 +57,32 @@ class Controller
 //s	}
 
 
+public function Ingresar(){
+     $nombre;
+      $password;
+    
+    
+   $nombre = $_REQUEST['Usuario'];  
+    $password = ($_REQUEST['Pasword']);    
+
+    //Verificamos si existe en la base de datos
+    if ($password=="1234")
+    {
+        $_SESSION["acceso"] = true;
+        $_SESSION["user"] = $resultado->nombre." ".$resultado->apellido;
+        header('Location: ?op=dash');
+
+    }
+    else
+    {
+        header('Location: ?&msg=Su contraseña o usuario está incorrecto');
+    }
+
+    
+
+
+}
+
 }
 
 
