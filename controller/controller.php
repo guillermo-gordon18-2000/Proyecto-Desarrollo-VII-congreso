@@ -26,20 +26,20 @@ class Controller
  //------------Vista de Analiticas
      public function VistaAnalitica(){
 
-        require("View/Analytics.html");
+        require("View/Analytics.php");
 
     }
      
  //------------Vista de Reporte
      public function VistaReporte(){
 
-        require("View/Report.html");
+        require("View/Report.php");
 
     }
 //------------Vista de Ajustes
      public function VistaSettings(){
 
-        require("View/Settings.html");
+        require("View/Settings.php");
 
     }
 

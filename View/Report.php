@@ -146,11 +146,13 @@
                               <thead>
                                 <tr>
                                     <th>Usuarios</th>
-                                    <th>Rol</th>
+                                    <th>Cedula</th>
+                                    <th>Ocupacion</th>
                                     <th>Facultada</th>
-                                    <th>Estado</th>
                                   
-                                    <th>Descripcion</th>
+                                    <th>Estado</th>
+                                    <th>Hora-E</th>
+                                    <th>Hora-S</th>
                                 </tr>
                               </thead>
                                     <tbody>
