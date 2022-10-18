@@ -39,7 +39,7 @@ class Controller
 //------------Vista de Ajustes
      public function VistaSettings(){
 
-        require("View/Settings.php");
+        require("View/Settings.html");
 
     }
 

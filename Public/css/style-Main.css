@@ -88,11 +88,15 @@ a{
 img{
    display: block;
    width  : 100%;
+
 }
 
 .img-r{
-   display: block;
-   width  : 100%;
+   display: flex;
+   width: 150px;
+   margin-left: 4px;
+   margin-top: 23px;
+   padding: initial;
 }
 
 h1{
@@ -734,6 +738,11 @@ justify-content: center;
       .right .sales-analytics .add-product:hover{
       background: var(--color-primary);
       color:var(--color-white);
+      }
+
+      .right .info .item{
+      margin-left: 5px;
+
       }
 
 
