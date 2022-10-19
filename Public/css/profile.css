@@ -1,6 +1,43 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+
+:root{
+	--color-primary         :#7380ec;
+	--color-danger          :#ff7782;
+	--color-success         :#41f1b6;
+	--color-warning         :#ffbb55;
+	--color-info-dark       :#7d8da1;
+	--color-info-light      :#dce1eb;
+	--color-dark            :#363949;
+	--color-light           :rgba(132,139,200,0.18);
+	--color-primary-variant :#111e88;
+	--color-darck-variant   :#677483;
+	
+	/*--color-background      :#f6f6f9;*/
+	--color-background   :#f6f6f9;            /* #201b22*/
+	--color-white        :#f0ffffde;
+	--color-LOGIN-Text   :#7a1c79;         /* #77ffc0*/ 
+	--color-card-login   : #7a1c79;           /* #2f2841*/
+	
+	
+	--card-border-radius    :2rem;
+	--border-radius-1       :0.4rem;
+	--border-radius-2       :0.8rem;
+	--border-radius-3       :1.2rem;
+	
+	--card-padding          :1.8rem;
+	--padding-1             :1.2rem;
+	
+}
+.dark-theme-variables{
+	--color-background:#181a1e;
+	--color-white:#202528;
+	--color-dark:#edeffd;
+	--color-darck-variant:#a3bdcc;
+	--color-light:rgba(0,0,0,0.4);
+	--box-shadow :0 2rem 3rem var(var(--color-light));
+	}
 body {
-	background: #f9f9f9;
+	background: var(--color-background);
 	font-family: "Roboto", sans-serif;
 }
 
@@ -11,6 +48,7 @@ body {
 .profile-tab-nav {
 	min-width: 250px;
 }
+
 
 .tab-content {
 	flex: 1;
@@ -24,15 +62,93 @@ body {
 	padding: 15px 20px;
 	border-bottom: 1px solid #ddd;
 	border-radius: 0;
-	color: #333;
+	color:white;
 }
+
 .nav-pills a.nav-link i {
 	width: 20px;
+	color:white;
 }
 
 .img-circle img {
-	height: 100px;
-	width: 100px;
+	height: 170px;
+	width: 170px;
 	border-radius: 100%;
 	border: 5px solid #fff;
 }
+
+.nav{
+
+	
+	color: blue;
+}
+
+.nav:hover{
+	
+	background:var(white) ;
+
+    
+  }
+
+	 .nav-pills a.active {
+		background: var(white);
+		color:white;
+		
+	}
+
+
+	.nav-pills a.nav-link:hover {
+		background:var(--color-LOGIN-Text);
+		color:white;
+		margin-left:1rem;
+		border-radius: 0.5rem;
+	}
+	.nav-pills a.nav-link.active {
+		background:var(--color-LOGIN-Text);
+		color:white;
+		border-radius: 0.2rem;
+		
+	}
+
+	.container-Settings{
+		background:var(--color-background) ;
+	}
+	.bg-white {
+		background:var(--color-background) !important;
+	  }
+
+	  .form-control {
+		display: block;
+		width: 100%;
+		height: calc(1.5em + .75rem + 2px);
+		padding: .375rem .75rem;
+		font-size: 1rem;
+		font-weight: 400;
+		line-height: 1.5;
+		color: var(--color-info-dark);
+		background-color: var(--color-background);
+		background-clip: padding-box;
+		border: 1px solid var(--color-info-light);
+		border-radius: .25rem;
+		transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	  }
+	  
+	  .btn-primary {
+		color: #fff;
+		background-color: var(--color-LOGIN-Text);
+	
+		border-color: var(--color-LOGIN-Text);
+	  }
+
+	  .p-44 {
+		padding: 5.5rem !important;
+		
+	  }
+
+	  .btn-primary:hover{
+		color: #fff;
+		background-color: var(--color-LOGIN-Text);
+	
+		border-color: var(--color-LOGIN-Text);
+	  }
+	
