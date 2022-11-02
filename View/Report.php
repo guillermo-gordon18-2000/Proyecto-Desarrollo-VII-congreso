@@ -7,6 +7,7 @@
       <title>Prototipo</title>
      <!-- MATERIAL ICONS -->
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
       <!-- STYLESHEET -->
       <link rel="stylesheet" href="Public/css/style-Main.css">
 </head>
@@ -141,6 +142,23 @@
               </div>
                  <!----------------------- END OF INSIGHTS ------------------->
                        <div class="recent-order">
+
+                       <div class="item add-product">
+                                  
+                       <span class="material-symbols-outlined">qr_code_scanner</span>
+                                    <i>QR</i>
+                                   <input type="file" id=real-file hidden="hidden"></input>
+                                   <button type="button" id="custom-button"></button>
+                              </div>
+
+                              <div class="item add-product">
+                                  
+                              <span class="material-symbols-outlined">photo_camera</span>
+                              <i>CAMERA</i>
+                                   <input type="file" id=real-file hidden="hidden"></input>
+                                 <button type="button" id="custom-button"></button>
+                              </div>
+
                          <h2>Recent Orders</h2>
                            <table>
                               <thead>
@@ -149,7 +167,6 @@
                                     <th>Cedula</th>
                                     <th>Ocupacion</th>
                                     <th>Facultada</th>
-                                  
                                     <th>Estado</th>
                                     <th>Hora-E</th>
                                     <th>Hora-S</th>
@@ -182,7 +199,7 @@
                      </div>
                      <div class="profile">
                         <div class="info">
-                            <p> Hey ,<b>Daniel </b></p>
+                            <p> Hey ,<b>Karian </b></p>
 
                             <small class="text-muted">Admin</small>
 

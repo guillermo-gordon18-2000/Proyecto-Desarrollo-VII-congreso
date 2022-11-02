@@ -78,6 +78,17 @@ body * {
 
 */  
  
+.Img_utp{
+    width: 100%;
+    height: 100px;
+    display: grid; 
+    justify-content: center;
+    align-items: center;
+    background-color: #dfd1fc; 
+    border-radius: 6px 0px 0px 6px;
+   margin-left: 20px;
+}
+
 .main-login{
 
     width: 100vw;

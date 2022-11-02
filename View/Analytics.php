@@ -9,6 +9,7 @@
      <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>-->
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    
      <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
       <!-- STYLESHEET -->
       <link rel="stylesheet" href="Public/css/style-Main.css">
@@ -70,15 +71,23 @@
                        
                     
                </div>
-        </aside>
+        </aside> 
+       
+
+        
+
+
+
+
         <!----------------------- END OF ASIDE ------------------->
              <main>   <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+           
               <h1>ANALITICAS</h1>
               <div class="date">
                 <input type="date">
 
               </div>
-              <div class =insights>
+           <div class =insights>   
                 <div class="card">
                   <div class="head">
                     <div>
@@ -87,8 +96,12 @@
                     </div>
                     <i class='bx bx-trending-up icon' ></i>
                   </div>
-                  <span class="progress" data-value="82%"></span>
-                  <span class="label-Progre">80%</span>
+                  <div  class="progress"  >
+                 
+                    <div class="progress-done" data-done="40" ></div>
+                   
+                  </div>
+                
                 </div>
                 
                 <div class="card">
@@ -99,8 +112,10 @@
                     </div>
                     <i class='bx bx-trending-up icon' ></i>
                   </div>
-                  <span class="progress" data-value="80%"></span>
-                  <span class="label-Progre">80%</span>
+                  <div  class="progress"  >
+                  <div class="progress-done" data-done="70" ></div>
+                  </div>
+                
                 </div>
                 
                 <div class="card">
@@ -111,10 +126,12 @@
                     </div>
                     <i class='bx bx-trending-up icon' ></i>
                   </div>
-                  <span class="progress" data-value="80%"></span>
-                  <span class="label-Progre">80%</span>
+                  <div id="progress" class="progress" >
+                  <div class="progress-done" data-done="70" ></div>
+                  </div>
+                 
                 </div>
-                         
+                       
                         
 
             </div class="card">   
@@ -155,17 +172,17 @@
                   },
                   };
                   
-                  var chart = new ApexCharts(document.querySelector("#chart"), options);
+                  var chart = new ApexCharts(document.querySelector("#chart"), options);   
                   chart.render();</script>
 
              </div>    
-
+           
                      
                    
                       <!----------------------- END OF EXPENSES ------------------->
                       
                  <!----------------------- END OF INSIGHTS ------------------->
-                       <div class="recent-order">
+                 <!--       <div class="recent-order">
                          <h2>Recent Orders</h2>
                            <table>
                               <thead>
@@ -179,19 +196,20 @@
                                 </tr>
                               </thead>
                                     <tbody>
-                                <!--        <tr>
+                                       <tr>
                                              <td> Foldable Mini Drone</td>
                                              <td>85631</td>
                                              <td>Due</td>
                                              <td class="warning">Pending</td>
                                              <td class="primary">Details</td>
-                                        </tr>  -->
+                                        </tr>  
                                        
                                     </tbody>
                            </table>
                         
                                    <a href="#">Show All</a>
-                       </div>
+                       </div>-->
+           
              </main>
 <!-------------------------------- END OF MAIN ------------------->
             <div class="right">
@@ -205,7 +223,7 @@
                      </div>
                      <div class="profile">
                         <div class="info">
-                            <p> Hey ,<b>Daniel </b></p>
+                            <p> Hey ,<b> Karian</b></p>
 
                             <small class="text-muted">Admin</small>
 
@@ -389,9 +407,11 @@
             </div>
       </div>
     <!--     <script src="Public/js/orders.js"></script> -->
+    
+   
+
+  
      <script src="Public/js/index.js"></script>
-     <script src="Public/js/chart1.js"></script>
- 
 
        
 

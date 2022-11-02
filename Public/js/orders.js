@@ -1,36 +1,83 @@
 const Orders=[{productName:'Fidel Miguel',
                productNumber:'789564',
-               paymentStatus:'Espera',
-               shipping:'Deliveri'
-              },
-              {productName:'Fidel Miguel',
-               productNumber:'789564',
-               paymentStatus:'Espera',
-               shipping:'Deliveri'
-              },
-              {productName:'Fidel Miguel',
-               productNumber:'789564',
-               paymentStatus:'Espera',
-               shipping:'Deliveri'
-              },
-              {productName:'Fidel Miguel',
-               productNumber:'789564',
-               paymentStatus:'Espera',
-               shipping:'Deliveri'
+               paymentStatus:'Profecional',
+               shipping:'Civil',
+               Status:'X',
+               Hora_E:'--:--',
+               Hora_S:'--:--'
               },
               {productName:'Fidel Miguel',
               productNumber:'789564',
-              paymentStatus:'Decline',
-              shipping:'Deliveri'
+              paymentStatus:'Profecional',
+              shipping:'Industrial',
+              Status:'A',
+              Hora_E:'10:00',
+              Hora_S:'13:00'
              },
              {productName:'Fidel Miguel',
              productNumber:'789564',
-             paymentStatus:'Espera',
-             shipping:'Deliveri'
+             paymentStatus:'Profecional',
+             shipping:'Ciencias',
+             Status:'A',
+             Hora_E:'10:00',
+             Hora_S:'13:00'
             },
             {productName:'Fidel Miguel',
             productNumber:'789564',
-            paymentStatus:'Espera',
-            shipping:'Deliveri'
-           }
+            paymentStatus:'Profecional',
+            shipping:'Sistemas Informaticos',
+            Status:'X',
+            Hora_E:'--:--',
+            Hora_S:'--:--'
+           },
+           {productName:'Fidel Miguel',
+           productNumber:'789564',
+           paymentStatus:'Docente',
+           shipping:'Civil',
+           Status:'A',
+           Hora_E:'10:00',
+           Hora_S:'13:00'
+          },
+              {productName:'Fidel Miguel',
+               productNumber:'789564',
+               paymentStatus:'Estudiante',
+               shipping:'Civil',
+               Status:'X',
+               Hora_E:'--:--',
+               Hora_S:'--:--'
+              },
+              {productName:'Fidel Miguel',
+              productNumber:'789564',
+              paymentStatus:'Docente',
+              shipping:'Industrial',
+              Status:'A',
+              Hora_E:'10:00',
+              Hora_S:'13:00'
+             },
+             {productName:'Fidel Miguel',
+             productNumber:'789564',
+             paymentStatus:'Docente',
+             shipping:'Ciencias',
+             Status:'A',
+             Hora_E:'10:00',
+             Hora_S:'13:00'
+            },
+            {productName:'Fidel Miguel',
+            productNumber:'789564',
+            paymentStatus:'Estudiante',
+            shipping:'Sistemas Informaticos',
+            Status:'X',
+            Hora_E:'--:--',
+            Hora_S:'--:--'
+           },
+           {productName:'Fidel Miguel',
+           productNumber:'789564',
+           paymentStatus:'Profecional',
+           shipping:'Civil',
+           Status:'A',
+           Hora_E:'10:00',
+           Hora_S:'13:00'
+        }
+           
             ]
+

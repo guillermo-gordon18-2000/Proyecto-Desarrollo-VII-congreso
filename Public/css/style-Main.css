@@ -170,6 +170,10 @@ h2{
     color: var(--color-warning)
  }
 
+ .warning2{
+   color: var(var(--color-danger))
+}
+
 
  aside{
    height: 120vh;
@@ -432,6 +436,9 @@ height: 7rem;
  
   }
 
+
+ 
+
   main .insights small{
     margin-top:1.3rem;
     display: block;
@@ -460,6 +467,41 @@ height: 7rem;
 
     box-shadow: none;
   }
+ 
+
+  main .recent-order .item.add-product{
+   width: 40%;
+   background: var(--color-white);
+   color: var(--color-dark);
+   display: inline-flex;
+   align-items: center;
+   gap: 1rem;
+   margin-left: 8px;
+   margin-bottom: 0.7rem;
+   padding: 1.4rem var(--card-padding);
+   border-radius: var(--border-radius-3);
+   box-shadow: var(--box-shadow);
+   transition: all 300ms ease;
+     }
+
+
+   main .recent-order .item:hover  {
+           background: var(--color-primary);
+           color:white;
+      
+           
+   }
+   main .recent-order .item.add-product input  {
+       padding: 10px;
+    
+   }
+   main .recent-order .item.add-product   {
+      width: 16%;
+   
+  }
+
+
+
 
   main table tbody td{
     height: 2.8rem;
@@ -506,33 +548,31 @@ main .card .head .icon {
 main .card .head .icon.down {
 	color: var(--red);
 }
+
 main .card .progress {
-	display: block;
-	margin-top: 24px;
+	
 	height: 10px;
-	width: 100%;
+	width: 220px;
 	border-radius: 10px;
-	background: var(--grey);
-	overflow-y: hidden;
-	position: relative;
-	margin-bottom: 4px;
-}
-main .card .progress::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	background: var(--blue);
-	width: var(--value);
-}
-main .card .label-Progre {
-   background:var(--color-white)  ;
-   color: var(--color-dark);
-	font-size: 14px;
-	font-weight: 700;
+	background-color:var(--color-info-light);
+	
 }
 
+ 
+main .card .progress .progress-done{
+	
+	height: 100%;
+	width: 30%;
+	display: flex;
+   box-shadow: 0 3px 3px -5px;
+	background:linear-gradient(to left ,orangered,rgb(223, 171, 171));
+	align-items: center;
+   justify-content: center;
+   border-radius: 10px;
+   opacity: 1;
+}
+
+ 
 
 
 
@@ -737,9 +777,14 @@ justify-content: center;
 
       .right .sales-analytics .add-product:hover{
       background: var(--color-primary);
-      color:var(--color-white);
+      color:var(white);
       }
 
+      .item .add-product:hover{
+         background: var(white);
+         color:var(white);
+         }
+   
       .right .info .item{
       margin-left: 5px;
 
@@ -753,95 +798,97 @@ justify-content: center;
 
 
 /*======================== MEDIA =======================*/
-       @media screen and (max-width: 1200px){
-         .container{
-            width: 1000%;
-            max-width: 12000px;
-            grid-template-columns:7rem auto 23rem ;
-         }
+@media screen and (max-width: 1200px){
+   .container{
+      width: 1000%;
+      max-width: 12000px;
+      grid-template-columns:7rem auto 23rem ;
+   }
 
-         aside .logo h2{
-           display:none;
-         }
-         aside .sidebar h3{
-            display: none;
-         }
-        
-         aside .sidebar a{
-           width: 5.6rem;
-         }
-         aside .sidebar a:last-child{
-           position:relative;
-           margin-top: 1.8rem;
-          }
-
-          main .insights{
-            grid-template-columns: 1fr;
-            gap:0;
-          }
-            
-          main .recent-order{
-            width: 94%;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            margin: 2rem 0 0 8.8rem;
-          }
-
-          main .recent-order table {
-            width: 84vw;
-            
-          }
-          
-          main table thead tr th:last-child,
-          main table thead tr th:first-child{
-            display: none;
-          }
-
-          main table tbody tr td:last-child,
-          main table tbody tr td:first-child{
-            display: none;
-          }
-
-       }
-
-
-       .profile-tab-nav {
-         min-width: 250px;
-      }
-      
-      .tab-content {
-         flex: 1;
-      }
-      
-      .form-group {
-         margin-bottom: 1.5rem;
-      }
-      
-      .nav-pills a.nav-link {
-         padding: 15px 20px;
-         border-bottom: 1px solid #ddd;
-         border-radius: 0;
-         color: #333;
-      }
-      .nav-pills a.nav-link i {
-         width: 20px;
-      }
-      
-      .img-circle img {
-         height: 100px;
-         width: 100px;
-         border-radius: 100%;
-         border: 5px solid #fff;
-      }
-
-    .p-4{
- 
+   aside .logo h2{
+     display:none;
+   }
+   aside .sidebar h3{
+      display: none;
+   }
+  
+   aside .sidebar a{
+     width: 5.6rem;
+   }
+   aside .sidebar a:last-child{
+     position:relative;
+     margin-top: 1.8rem;
     }
 
-    .pb-5, .py-5 {
-      padding-bottom: 3rem !important;
+    main .insights{
+      grid-template-columns: 1fr;
+      gap:0;
     }
+      
+    main .recent-order{
+      width: 94%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 2rem 0 0 8.8rem;
+    }
+
+    main .recent-order table {
+      width: 84vw;
+      
+    }
+    
+    main table thead tr th:last-child,
+    main table thead tr th:first-child{
+      display: none;
+    }
+
+    main table tbody tr td:last-child,
+    main table tbody tr td:first-child{
+      display: none;
+    }
+
+ }
+
+
+ .profile-tab-nav {
+   min-width: 250px;
+}
+
+.tab-content {
+   flex: 1;
+}
+
+.form-group {
+   margin-bottom: 1.5rem;
+}
+
+.nav-pills a.nav-link {
+   padding: 15px 20px;
+   border-bottom: 1px solid #ddd;
+   border-radius: 0;
+   color: #333;
+}
+.nav-pills a.nav-link i {
+   width: 20px;
+}
+
+.img-circle img {
+   height: 100px;
+   width: 100px;
+   border-radius: 100%;
+   border: 5px solid #fff;
+}
+
+.p-4{
+
+}
+
+.pb-5, .py-5 {
+padding-bottom: 3rem !important;
+}
+
+
 
 
 
@@ -854,7 +901,7 @@ justify-content: center;
       .container{
         width: 100%;
         grid-template-columns: 1fr;
-        max-width: 12000px;
+        max-width: 1200px;
       }
       aside{
         position: fixed;
@@ -916,6 +963,26 @@ justify-content: center;
        
 
      }
+
+     
+   main .recent-order .item i  {
+      display: none;
+ 
+      
+}
+
+main table thead tr th:nth-child(1),
+main table thead tr th:nth-child(4),
+main table thead tr th:nth-child(3){
+  display: none;
+}
+
+main table tbody tr td:nth-child(1),
+main table tbody tr td:nth-child(4),
+main table tbody tr td:nth-child(3){
+  display: none;
+}
+
      .right{
         width: 94%;
         margin: 0 auto 4rem;

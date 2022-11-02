@@ -151,14 +151,6 @@ window.addEventListener('click', function (e) {
 
 
 
-// PROGRESSBAR
-const allProgress = document.querySelectorAll('main .card .progress');
-
-allProgress.forEach(item=> {
-	item.style.setProperty('--value', item.dataset.value)
-})
-
-
 
 
 
@@ -195,3 +187,7 @@ tooltip: {
 
 var chart = new ApexCharts(document.querySelector("chart"), options);
 chart.render();
+
+
+
+

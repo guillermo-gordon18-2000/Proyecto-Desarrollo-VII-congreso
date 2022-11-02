@@ -82,6 +82,7 @@
                                 <h3>Total Suscritos</h3>
                                 <h1>451</h1>
                             </div>
+                            <!--
                             <div class="progress">
                                 <svg>
                                     <circle  cx='38' cy='38' r='36'></circle>
@@ -90,6 +91,7 @@
                                   <p>81%</p>
                                 </div>
                             </div>
+                             -->
                         </div>
                          <small class="text-muted">Last 24 Hours</small>
                     </div>
@@ -99,7 +101,7 @@
                         <div class="middle">
                             <div class="lef">
                                 <h3>Total Asistieron</h3>
-                                <h1>350</h1>
+                                <h1>326</h1>
                             </div>
                             <div class="progress">
                                 <svg>
@@ -260,7 +262,7 @@
                      </div>
                      <div class="profile">
                         <div class="info">
-                            <p> Hey ,<b>Daniel </b></p>
+                            <p> Hey ,<b>Karian </b></p>
 
                             <small class="text-muted">Admin</small>
 
@@ -300,7 +302,7 @@
                                 </div>
 
                                 <div class="update">
-                                    <div class="profile-photo-profile">
+                                    <div class="profile-photo">
                                          <img src="Public/images/images-12/profile-4.jpg" alt="">
                                     </div>
                                     <div class="message">
