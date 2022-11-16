@@ -85,6 +85,7 @@ a{
    color:var(--color-dark)
 }
 
+
 img{
    display: block;
    width  : 100%;
@@ -703,7 +704,8 @@ justify-content: center;
     box-shadow: var(--box-shadow);
     transition: all 300ms ease;
       }
-
+            
+      
       .right .sales-analytics .item-r {
          background: var(--color-white);
          color: var(--color-dark);
@@ -776,6 +778,127 @@ justify-content: center;
       }
 
       .right .sales-analytics .add-product:hover{
+      background: var(--color-primary);
+      color:var(white);
+      }
+
+      .item .add-product:hover{
+         background: var(white);
+         color:var(white);
+         }
+   
+      .right .info .item{
+      margin-left: 5px;
+
+      }
+
+
+
+      .right .sales-analytics_2{
+         margin-top: 2rem;
+         color: var(--color-dark);
+        
+     }
+        
+ 
+ 
+     .right .sales-analytics_2 h2{
+         margin-bottom: 0.8rem;
+         
+     }
+
+      .right .sales-analytics_2 .item {
+         background: var(--color-white);
+         color: var(--color-dark);
+         display: grid;
+         align-items: center;
+         gap: 1rem;
+         margin-bottom: 0.7rem;
+         padding: 1.4rem var(--card-padding);
+         border-radius: var(--border-radius-3);
+         box-shadow: var(--box-shadow);
+         transition: all 300ms ease;
+     }
+
+         
+      .right .sales-analytics_2 .item-r {
+         background: var(--color-white);
+         color: var(--color-dark);
+         display: flex;
+         align-items: center;
+         gap: 3rem;
+         margin-bottom: 0.7rem;
+         padding: 1.4rem var(--card-padding);
+         border-radius: var(--border-radius-3);
+         box-shadow: var(--box-shadow);
+         transition: all 300ms ease;
+       }
+
+      .right .sales-analytics_2 .item:hover{
+       box-shadow: none;
+      }
+
+      .right .sales-analytics_2 .item .right{
+        display:flex;
+        justify-content: space-between;
+        align-items: start;
+        margin:0;
+        width: 100%;
+      }
+
+      .right .sales-analytics_2 .item .right .info .SEL_1254{
+         
+         width: 100%;
+         padding-left: 14px;
+       }
+
+      .right .sales-analytics_2 .item .icon{
+        padding: 0.6rem;
+        color:var(--color-white);
+        border-radius: 7%;
+        background: var(--color-warning);
+        display: flex;
+
+      }
+      .right .sales-analytics_2 .item.offline.icon{
+        
+            background: var(--color-danger);
+      }
+      
+             .font-12{text-align: center;
+                            margin-top:2%;
+                            
+                                 font-size: 16px;
+                                                   } 
+
+                                              .info h3{
+                                          padding: 1rem;
+                                                   }
+
+      .right .sales-analytics_2 .item.customers .icon{
+        background: var(--color-danger);
+      }
+
+      .right .sales-analytics_2 .add-product{
+        background: transparent;
+        border: 2px dashed var(--color-primary);
+        color: var(--color-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .right .sales-analytics_2 .add-product div{
+        gap:0.6rem;
+        display: flex;
+        align-items: center;
+       
+      }
+      .right .sales-analytics_2 .add-product div h3{
+        font-weight: 800;
+        
+      }
+
+      .right .sales-analytics_2 .add-product:hover{
       background: var(--color-primary);
       color:var(white);
       }

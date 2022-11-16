@@ -4,7 +4,9 @@
 /* Set conection */
 
 //Incluyo los archivos necesarios
+require_once 'Model/db.php';
 require("controller/controller.php");
+
  
 
 //Instancio el controlador
@@ -19,8 +21,14 @@ if (isset($_GET['op'])){ //
     {
     //Llamo al método ver pasándole la clave que me están pidiendo
     $controller->crearUsuario();
+    }else if($opcion=="permitido"){
+ $controller->IngresarPanel();
+        
+       
+
     }else if($opcion=="dash"){
-        $controller->Mainvista();
+        $controller->IngresarPanel();
+       
 
     }else if($opcion=="Analit"){
         $controller->VistaAnalitica();
@@ -31,7 +39,13 @@ if (isset($_GET['op'])){ //
     }elseif ($opcion=="acceder"){
         //Llamo al método ver pasándole la clave que me están pidiendo
         $controller->Ingresar();
-     }else if($opcion=="Setting"){
+     }elseif ($opcion=="actualizar"){
+
+        //Llamo al método ver pasándole la clave que me están pidiendo
+    
+        $controller->ActualizarDatos();
+       
+    }else if($opcion=="Setting"){
         $controller->VistaSettings();
 
     }else if($opcion=="Logg"){
