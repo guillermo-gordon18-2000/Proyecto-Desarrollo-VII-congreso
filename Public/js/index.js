@@ -26,9 +26,15 @@ themeToggler.addEventListener('click', ()=> {
     themeToggler.querySelector('span:nth-child(2)').classList.toggle('active');;
 })
 
-Orders.forEach(order =>{
-const tr = document.createElement('tr');
 
+
+
+if(false){
+  const fecha = document.getElementById("Dia").value  
+Orders.forEach(order =>    {
+const tr = document.createElement('tr');
+//fecha=="2022-11-12"
+if(fecha==order.time){
 const trContent = ` 
 
                   <td>${order.productName}</td>
@@ -38,13 +44,18 @@ const trContent = `
                   <td class="${order.Status === 'A' ? 'success':'danger'}">${order.Status}</td>
                   <td class="primary">${order.Hora_E}</td>  
                   <td class="primary">${order.Hora_S}</td>    
-                 
+                  
 `;
-tr.innerHTML= trContent;
-document.querySelector('table tbody').appendChild(tr);
-})
 
- 
+
+tr.innerHTML= trContent; }
+document.querySelector('table tbody').appendChild(tr);
+}     )
+}
+
+
+
+
 const progress = document.querySelector('.progress-done');
 
 setTimeout(()=> {

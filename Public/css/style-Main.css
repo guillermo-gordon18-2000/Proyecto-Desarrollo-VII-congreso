@@ -51,7 +51,7 @@
     margin         :0;
     padding        :0;
     outline        :0;
-    appearance     :none;
+     
     border         :0;
     text-decoration:none;
     list-style     : none;
@@ -125,6 +125,7 @@ h2{
  }
 
  small{
+   margin-left: 9px;
     font-size  :0.75rem;
  }
 
@@ -730,7 +731,37 @@ justify-content: center;
         margin:0;
         width: 100%;
       }
+      .right .sales-analytics .item .right-end{
+         display:flex;
+         justify-content: end;
+         align-items: start;
+         margin:5px;
+         width: 100%;
+         gap: 1rem;
+       }
 
+      .right .sales-analytics .item .right{
+         display:flex;
+         justify-content: space-between;
+         align-items: start;
+         margin:0;
+         width: 100%;
+       }
+
+       .right .info-AUTOR .item{
+         margin-left: 5px;
+   
+         }
+
+       .image-autor{
+         margin-right: 12px;
+         width: 5rem;
+         height: 4.4rem;
+         border-radius: 90%;
+
+       }
+
+      
       .right .sales-analytics .item .icon{
         padding: 0.6rem;
         color:var(--color-white);
@@ -778,14 +809,16 @@ justify-content: center;
       }
 
       .right .sales-analytics .add-product:hover{
-      background: var(--color-primary);
-      color:var(white);
-      }
-
-      .item .add-product:hover{
-         background: var(white);
+         background: var(--color-primary);
          color:var(white);
+    
          }
+    
+         
+         .item .add-product:hover{
+            background: var(white);
+            color:var(white);
+            }
    
       .right .info .item{
       margin-left: 5px;
@@ -834,12 +867,9 @@ justify-content: center;
          transition: all 300ms ease;
        }
 
-      .right .sales-analytics_2 .item:hover{
-       box-shadow: none;
-      }
-
+      
       .right .sales-analytics_2 .item .right{
-        display:flex;
+        display:contents;
         justify-content: space-between;
         align-items: start;
         margin:0;
@@ -880,9 +910,12 @@ justify-content: center;
       }
 
       .right .sales-analytics_2 .add-product{
+         width: 135px; 
+         padding-right: 13px;
+         margin-right: 13px;
         background: transparent;
-        border: 2px dashed var(--color-primary);
-        color: var(--color-primary);
+        border: 2px dashed var(--color-warning);
+        color: var(--color-warning);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -899,26 +932,104 @@ justify-content: center;
       }
 
       .right .sales-analytics_2 .add-product:hover{
-      background: var(--color-primary);
+      background-color:  var(--color-warning);
+      
       color:var(white);
       }
+      
+      .right .sales-analytics_2 .lihgt-2{
+         display: flex;
+      }
+          
 
-      .item .add-product:hover{
+
+
+      .item .add-product .item:hover{
          background: var(white);
          color:var(white);
          }
-   
+
+          
       .right .info .item{
       margin-left: 5px;
 
       }
 
 
+      
+  .boton-modal{
+   padding: 40px;
+   background: #41f1b6;
+}
 
+.boton-modal label{
+   padding: 10px 15px;
+   background: #5488a3;
+   color: #fff;
+   border-radius: 4px;
+   cursor:pointer;
+   transition: all 300ms ease;
+}
+.boton-modal label:hover{
+   background: #185E83;
+}
 
+       
+#btn-modal{
+   display: none;
+}
 
-
-
+.container-modal{
+   width: 100%;
+   height: 100vh;
+   position: fixed;
+   top:0; left: 0;
+   background: rgb(144, 150, 150,0.8);
+   display: none;
+   justify-content: center;
+   align-items: center;
+   z-index: 100;
+}
+#btn-modal:checked  ~ .container-modal{
+        
+  display:flex ; 
+}
+    .content-modal{
+      width: 100%;
+      max-width: 400px;
+      padding: 20px;
+      background-color:#f6f6f9 ;
+      border-radius: 4px;
+    }
+    .content-modal h2{
+      margin-bottom: 15px;
+    }
+    .content-modal p{
+      padding: 15px 0px;
+      border-top: 1px solid #dbdbdb;
+      border-bottom: 1px solid #dbdbdb;
+    }
+    .content-modal .btn-cerrar{
+      width: 100%;
+      margin-top: 15px;
+      display: flex;
+      justify-content: flex-end;
+    }
+   
+    .content-modal .btn-cerrar label{
+      padding: 7px 10px;
+      background-color: #5488a3;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 300ms ease;
+    }
+   
+    .content-modal .btn-cerrar label:hover{
+      background-color: #185E83;
+    }
+  
+   
 
 /*======================== MEDIA =======================*/
 @media screen and (max-width: 1200px){

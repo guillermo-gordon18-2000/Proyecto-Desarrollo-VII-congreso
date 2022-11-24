@@ -1,5 +1,6 @@
 
 <?php
+@session_start();
 ini_set('display_errors',1);
 ini_set('display_startup_errors',1);
 error_reporting(E_ALL);
@@ -17,7 +18,14 @@ class Usuario
     public $apellido;  
     public $email;
     public $pass;
-     Public $Empresa;
+    Public $Empresa;
+	Public $Conferencia;
+	Public $Cedula;
+	Public $Dia;
+
+	Public $Contra_0;
+	Public $Contra_1;
+	Public $Contra_2;
 
 
 	public function __CONSTRUCT()
@@ -91,6 +99,22 @@ class Usuario
 		}
 	}
 
+	public function Obtener_Sub($id)
+	{
+		try 
+		{
+			$stm = $this->pdo
+			          ->prepare("SELECT * From usuario where  Cedula=?");
+			          
+
+			$stm->execute(array($id));
+			return $stm->fetch(PDO::FETCH_OBJ);
+		} catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+	}
+
 	
 
 	public function Obtener_listaconferencia()
@@ -142,6 +166,48 @@ class Usuario
 		{                           //
 			$stm = $this->pdo->prepare("CALL Lista_Num_Conferencia_2(?)");   
 			$stm->execute(array($id));
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+	}
+
+	public function asisitencia_Lits(usuario $data)
+	{
+		try 
+		{                           //
+			$stm = $this->pdo->prepare("SELECT Nombre,Apellido,b.Cedula,Sexo,Opupacion,Tipo_Ticket,a.Hora_Entrada,a.Hora_Salida ,  a.Fecha ,a.ID_asistencia FROM congreso.asistencia as a, congreso.usuario as b where a.ID_Conferencia=? and   b.Cedula=? and a.ID_usuario=b.ID_usuario and a.Fecha=?");   
+			$stm->execute(array($data->Conferencia, $data->Cedula, $data->Dia ));
+			
+			return $stm->fetch(PDO::FETCH_OBJ);
+		} catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+	}
+
+	
+	public function Insertar_Asistencia_LTS(usuario $data)
+	{
+		try 
+		{                           //
+			$stm = $this->pdo->prepare("INSERT INTO `congreso`.`asistencia`(`ID_Usuario`,`Fecha`,`Hora_Entrada`,`Hora_Salida`,`ID_Conferencia`)VALUES(?,?,'10:00','--|--',?)");   
+			$stm->execute(array($data->IDusuario, $data->Dia, $data->Conferencia ));
+			
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+	}
+	public function Insertar_Asistencia_PTS(usuario $data)
+	{
+		try 
+		{                           //
+			$stm = $this->pdo->prepare("UPDATE `congreso`.`asistencia` SET `Hora_Salida` = '12:00' WHERE `ID_asistencia` = ?");   
+			$stm->execute(array($data->ID_Asistencia));
+			
 			return $stm->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e) 
 		{

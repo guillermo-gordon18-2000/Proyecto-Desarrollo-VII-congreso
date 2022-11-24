@@ -1,16 +1,16 @@
 
-<?php
-ini_set('display_errors',1);
-ini_set('display_startup_errors',1);
-error_reporting(E_ALL);
-?>
+
 <?php
 
-session_start();
-require_once 'Model/ubicacion.php';
+
+require_once 'Model/Congreso.php';
 require_once 'Model/usuario.php';
+
+
 class Controller
 {
+public $qr;
+
  private $model;
  private $model2;
  private $model3;
@@ -21,20 +21,34 @@ class Controller
 
  private $model__Subcriptores;
  private $model__Subcriptores_ST;
+
+ private $model__Subcriptores_US;
+ private $model__Subcriptores_US_INFO;
+
+ private $model__asistencia;
+
+ private $model__asistencia_insert;
+ private $model__asistencia_MODI;
  private $resp;
     
     public function __CONSTRUCT(){
+     
         $this->model = new Usuario();
-        $this->model2 = new Ubicacion();
-         $this->model3 = new Ubicacion();
+        $this->model2 = new Congreso();
+         $this->model3 = new Congreso();
          $this->model4 = new Usuario();
 
          $this->model4_conferencia = new Usuario();
          $this->model4_NUm_conferencia = new Usuario();
 
-
+        
          $this->model__Subcriptores = new Usuario();
          $this->model__Subcriptores_ST = new Usuario();
+         $this->model__asistencia = new Usuario();
+         $this->model__asistencia_insert= new Usuario();
+         $this->model__asistencia_MODI= new Usuario();
+
+         $this->model__Subcriptores_US = new  Congreso();
     }    
 
     public function index(){
@@ -45,6 +59,9 @@ class Controller
     }
 
     public function Mainvista(){
+            
+        $Subcriptores = new Usuario();
+        $Subcriptores = $this->model__Subcriptores->Obtener_Subcriptores();
 
         require("view/Main.php");
 
@@ -52,10 +69,14 @@ class Controller
 
 
     public function VistaAnalitica(){
-
+           
       
         $lista_conferencia = new Usuario();
         $lista_conferencia = $this->model4_conferencia->Obtener_listaconferencia();
+        
+        
+        $lista_conferencia_G = new Usuario();
+        $lista_conferencia_G = $this->model4_conferencia->Obtener_listaconferencia();
 
         $model4_Num  = new Usuario();
         $model4_Num = $this->model4_NUm_conferencia->Lista_Num_Conferencia(4);
@@ -64,6 +85,8 @@ class Controller
 
     public function VistaReporte(){
           
+         $usuario = new Usuario();
+         $usuario = $this->model->Obtener($_SESSION['id']);
 
         $Subcriptores = new Usuario();
         $Subcriptores = $this->model__Subcriptores->Obtener_Subcriptores();
@@ -75,6 +98,12 @@ class Controller
         
         $lista_conferencia = new Usuario();
         $lista_conferencia = $this->model4_conferencia->Obtener_listaconferencia();
+      
+
+
+        $lista_SUS_U = new Congreso();
+        $lista_SUS_U = $this->model__Subcriptores_US->Consultar_Suscrito_Congreso($_SESSION["CNFE"]);
+
 
         require("view/Report.php");
 
@@ -83,13 +112,15 @@ class Controller
     
     public function VistaSettings(){
 
-        $usuario = new Usuario();
-        $usuario = $this->model->Obtener($_SESSION['id']);
+       
           
         $listaUsuario = new Usuario();
         $listaUsuario = $this->model4->ObtenerTodosLosUsuarios( $_SESSION["CNFE"] );
-        
-        require("view/Settings.php");
+
+         $usuario = new Usuario();
+         $usuario = $this->model->Obtener($_SESSION['id']);
+        require("view/Settings-45.php");
+
 
     }
 
@@ -113,12 +144,23 @@ class Controller
          
 
     public function IngresarPanel(){
-           
+        
+       
+        $Subcriptores_Info = new Usuario();
+        $Subcriptores_Info = $this->model__Subcriptores_ST->Obtener_INFO_Subcriptores(1);
+
+        $Subcriptores = new Usuario();
+        $Subcriptores = $this->model__Subcriptores->Obtener_Subcriptores();   
+
         $listaUsuario = new Usuario();
-        $listaUsuario = $this->model4->ObtenerTodosLosUsuarios( $_SESSION["CNFE"] );
+        $listaUsuario = $this->model4->ObtenerTodosLosUsuarios($_SESSION["CNFE"] );
         
         $lista_conferencia = new Usuario();
         $lista_conferencia = $this->model4_conferencia->Obtener_listaconferencia();
+           
+        
+        $lista_conferencia_G = new Usuario();
+        $lista_conferencia_G = $this->model4_conferencia->Obtener_listaconferencia();
 
         $usuario = new Usuario();
         $usuario = $this->model->Obtener($_SESSION['id']);
@@ -168,14 +210,16 @@ class Controller
             $_SESSION["foto"] = $resultado->Foto;
             $_SESSION["id"] = $resultado->id;
             $_SESSION["Nivel"] = $resultado->Nivel;
+
             $_SESSION["CNFE"] = $resultado->ID_Conferencia;
            // $_SESSION["acceso"] = true;
             //$_SESSION["ID"] = true;
             $_SESSION["user"] = $resultado->nombre." ".$resultado->apellido;
            
  
-            if($_SESSION["Nivel"] == 2 or $_SESSION["Nivel"] == 3 ){
+            if($_SESSION["Nivel"] == 2 or $_SESSION["Nivel"] == 3 or  $_SESSION["Nivel"] == 1  ){
                 header('Location: ?op=report');
+
             }else{
                 header('Location: ?op=permitido');
             }
@@ -217,7 +261,68 @@ class Controller
         
         $this->resp= $this->model->Actualizar($usuario);
 
-        header('Location: ?op=permitido&msg='.$this->resp);
+        header('Location: ?op=Setting&msg='.$this->resp);
+    }
+
+
+    
+    public function Actualizar_Contraseña(){
+       
+        $usuario = new Usuario();
+        $usuario->Contra_0 = $_REQUEST['nombre'];
+        $usuario->Contra_1 = $_REQUEST['apellido'];
+        $usuario->Contra_2 = $_REQUEST['apellido'];
+        $usuario->id=$_SESSION["id"];
+
+
+        
+      
+
+        header('Location: ?op=Setting&msg='.$this->resp);
+    }
+
+    
+    public function Guardar_Asistencia(){
+        $usuario_asistencia  = new Usuario();
+       
+        
+        $usuario_asistencia->Cedula =      $_REQUEST['Cedula'];
+        $usuario_asistencia->Dia =         $_REQUEST['Dia'];
+        $usuario_asistencia->Conferencia = $_SESSION["CNFE"] ;
+       
+             if($resp= $this->model__asistencia->asisitencia_Lits($usuario_asistencia)){
+                   //MODIFICAR REGISTRO
+
+
+                   if($usuario_w= $this->model->Obtener_Sub($usuario_asistencia->Cedula)){
+                    
+                    $model__asistencia_MODI  = new Usuario();
+                    $model__asistencia_MODI->ID_Asistencia=$resp->ID_asistencia;
+                    
+                     $this->resp_ALTER= $this->model__asistencia_MODI->Insertar_Asistencia_PTS($model__asistencia_MODI);
+                      header('Location: ?op=report&msg=Asistencia MODIFICADA'.$resp->ID_asistencia);
+                   //  $model__asistencia_MODI
+                  } 
+
+                  
+             }else
+             {
+                  
+              
+                  if($usuario_w= $this->model->Obtener_Sub($usuario_asistencia->Cedula)){
+                    
+                    $model__asistencia_insert  = new Usuario();
+                     $model__asistencia_insert->IDusuario=$usuario_w->ID_usuario;
+                     $model__asistencia_insert->Dia= $usuario_asistencia->Dia;
+                     $model__asistencia_insert->Conferencia = $usuario_asistencia->Conferencia;
+                     $this->resp_INSERT= $this->model__asistencia_insert->Insertar_Asistencia_LTS($model__asistencia_insert);
+                     header('Location: ?op=report&msg=Asistencia Creada');
+                  }               
+                 // CREAR REGISTRO
+             }       
+        //$this->resp= $this->model->Registrar($usuario);
+
+        
     }
  
 

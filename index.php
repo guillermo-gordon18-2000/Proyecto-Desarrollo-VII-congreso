@@ -1,5 +1,7 @@
 
+
 <?php
+
 /*Guillermo Gordon 8-95-2011 */
 /* Set conection */
 
@@ -13,9 +15,11 @@ require("controller/controller.php");
 $controller = new Controller;
 
 //Decido la ruta en función de los elementos del array
-if (isset($_GET['op'])){ //
+if (isset($_GET['op']) ){ //
 
     $opcion=$_GET['op'];
+
+
 
     if ($opcion=="crear")
     {
@@ -24,8 +28,6 @@ if (isset($_GET['op'])){ //
     }else if($opcion=="permitido"){
  $controller->IngresarPanel();
         
-       
-
     }else if($opcion=="dash"){
         $controller->IngresarPanel();
        
@@ -39,21 +41,33 @@ if (isset($_GET['op'])){ //
     }elseif ($opcion=="acceder"){
         //Llamo al método ver pasándole la clave que me están pidiendo
         $controller->Ingresar();
+        
      }elseif ($opcion=="actualizar"){
 
         //Llamo al método ver pasándole la clave que me están pidiendo
     
         $controller->ActualizarDatos();
        
+    }elseif ($opcion=="actualizar_contra"){
+
+        //Llamo al método ver pasándole la clave que me están pidiendo
+    
+        $controller->Actualizar_Contraseña();
+       
+    }else if($opcion=="ASISITENCIA"){
+
+        $controller->Guardar_Asistencia();
+
     }else if($opcion=="Setting"){
         $controller->VistaSettings();
 
     }else if($opcion=="Logg"){
-        $controller->index();
 
+        $controller->index();
+            $_SESSION['Nivel']="";
     }
-}
-else{
+
+}else{
 
     //Llamo al método por defecto del controlador
    // $controller->index();
