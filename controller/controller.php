@@ -180,11 +180,18 @@ public $qr;
          
 
     public function IngresarPanel(){
-         
+        /* 
       $rdb = new firebaseRDB("https://scannerqr-f531a-default-rtdb.firebaseio.com/"); 
+      $retrive = $rdb->retrieve("/Usuario","EQUAL","1-959-6451");
+      $data = json_decode($retrive,1);
+       
+          if(isset($data[''])!=null){
+            echo " <script> alert('SI')</script>";
+          }else{
+           echo " <script> alert('No')</script>";
+          }
 
-
-
+*/
 
 /*
        $url="https://congreso-a1e49-default-rtdb.firebaseio.com//proydsect.json";
@@ -201,14 +208,7 @@ public $qr;
        }
 */
       /*
-        $retrive = $rdb->retrieve("/02-123-456","","EQUAL","02-123-456");
-      $data = json_decode($retrive,1);
        
-          if(isset($data['02-123-456'])){
-            echo " <script> alert('SI')</script>";
-          }else{
-           echo " <script> alert('No')</script>";
-          }
           
           */
 
@@ -355,14 +355,20 @@ public $qr;
     public function Actualizar_Contraseña(){
        
         $usuario = new Usuario();
-        $usuario->Contra_0 = $_REQUEST['nombre'];
-        $usuario->Contra_1 = $_REQUEST['apellido'];
-        $usuario->Contra_2 = $_REQUEST['apellido'];
+        $usuario->Contra_0 = $_REQUEST['passwor_old'];
+        $usuario->Contra1 = md5($_REQUEST['passwor1']);
+        $usuario->Contra2 = md5($_REQUEST['passwor2']);
         $usuario->id=$_SESSION["id"];
+
+        if(   $usuario->Contra_1 == $usuario->Contra_2){
+
+        $this->resp= $this->model->ActualizarConta($usuario);
+            header('Location: ?op=Setting&msg='.$this->resp);
+        
          //consulta de conferencia  if()
+         header('Location: ?op=Setting&msg='.$this->resp);
 
-
-
+    }
         
       
 
@@ -402,7 +408,7 @@ public $qr;
              {
                   
               
-                  if($usuario_w= $this->model->Obtener_Sub($usuario_asistencia->Cedula) and $usuario_asistencia->Dia!="___"){
+                  if($usuario_w= $this->model->Obtener_Sub($usuario_asistencia->Cedula) ){
                     
                     $model__asistencia_insert  = new Usuario();
                      $model__asistencia_insert->IDusuario=$usuario_w->ID_usuario;
@@ -418,12 +424,14 @@ public $qr;
                         $_SESSION["SU_EXIS"]="false"; 
                      
                      
-                        header('Location: ?op=report&msg=Error&asi=false');  
+                        header('Location: ?op=report&msg=Error-2&asi=false');  
                      }
-                  }  
-                         $_SESSION["SU_EXIS"]="false";   
+                  }else{
+                    $_SESSION["SU_EXIS"]="false";   
                  
-                  header('Location: ?op=report&msg=Error&asi=false');  
+                  header('Location: ?op=report&msg=Error-3&asi=false');  
+                  }  
+                         
                   
                  // CREAR REGISTRO
              }       

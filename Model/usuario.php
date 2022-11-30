@@ -312,7 +312,29 @@ class Usuario
 		return $this->msg;
 	}
 
+	public function ActualizarConta(usuario $data)
+	{
+		try 
+		{
+		$sql = "UPDATE staff SET Contraseña = ? 
+		        WHERE id = ?";
 
+		$this->pdo->prepare($sql)
+		     ->execute(
+				array( 
+                    $data->Contra1,
+                    
+					$data->id
+                )
+			);
+		$this->msg="Su registro se ha Actualizado exitosamente!&t=text-success";
+		} catch (Exception $e) 
+		{
+			$this->msg="Error al actualizar los datos&t=text-danger";
+
+		}
+		return $this->msg;
+	}
 
 }
 
