@@ -1,11 +1,9 @@
 Segundo entregable 
 ==========================================
 Faces               Dashboard
+ 
+1                 maquetado 
 
-1                    
+2                 Backend
 
-<<<<<<< Updated upstream
-Esta echo de puro CSS nada de Bootstrap  y apenas esta porla mitad
-=======
-Esta echo de puro CSS nada de Bootstrap  y apenas esta porla mitad
->>>>>>> Stashed changes
+3                 Funcionalidades lista
