@@ -15,11 +15,11 @@ require("controller/controller.php");
 $controller = new Controller;
 
 //Decido la ruta en función de los elementos del array
-if (isset($_GET['op']) ){ //
+if (isset($_GET['op'])){ //
 
     $opcion=$_GET['op'];
 
-
+    $controller->UPDATE_FIREBASE();
 
     if ($opcion=="crear")
     {
@@ -36,8 +36,9 @@ if (isset($_GET['op']) ){ //
         $controller->VistaAnalitica();
 
     }else if($opcion=="report"){
+  
         $controller->VistaReporte();
-
+        
     }elseif ($opcion=="acceder"){
         //Llamo al método ver pasándole la clave que me están pidiendo
         $controller->Ingresar();
@@ -47,6 +48,18 @@ if (isset($_GET['op']) ){ //
         //Llamo al método ver pasándole la clave que me están pidiendo
     
         $controller->ActualizarDatos();
+       
+    }elseif ($opcion=="Agregar_conferencia"){
+
+        //Llamo al método ver pasándole la clave que me están pidiendo
+    
+//  $controller->ActualizarDatos();
+$controller->AGregar_Conferencia();
+    }elseif ($opcion=="Agregar_Staff"){
+
+        //Llamo al método ver pasándole la clave que me están pidiendo
+    
+        $controller->Agregar_Staff();
        
     }elseif ($opcion=="actualizar_contra"){
 
@@ -59,6 +72,8 @@ if (isset($_GET['op']) ){ //
         $controller->Guardar_Asistencia();
 
     }else if($opcion=="Setting"){
+        $_SESSION["DIA"]=" ";
+       
         $controller->VistaSettings();
 
     }else if($opcion=="Logg"){
@@ -71,6 +86,9 @@ if (isset($_GET['op']) ){ //
 
     //Llamo al método por defecto del controlador
    // $controller->index();
+ 
+
         $controller->index();
+      
 }
 ?>

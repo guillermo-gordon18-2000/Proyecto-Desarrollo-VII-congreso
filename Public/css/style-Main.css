@@ -130,12 +130,16 @@ h2{
  }
 
  .profile-photo{
-   width : 2.8rem;
-   height: 2.8rem;
+   width : 4 rem;
+   height:  2.8rem;
    border-radius:50%;
    overflow: hidden;
  }
-
+ .profile-photo img{
+   height: 44px;
+   width: 38px;
+   border-radius: 61%;
+ }
 
  .profile-photo-profile{
    width : 15px;
@@ -911,14 +915,14 @@ justify-content: center;
 
       .right .sales-analytics_2 .add-product{
          width: 135px; 
-         padding-right: 13px;
-         margin-right: 13px;
+        
         background: transparent;
         border: 2px dashed var(--color-warning);
         color: var(--color-warning);
         display: flex;
         align-items: center;
         justify-content: center;
+        margin: 25px 6px 6px 74px;
       }
       .right .sales-analytics_2 .add-product div{
         gap:0.6rem;
@@ -958,9 +962,12 @@ justify-content: center;
 
       
   .boton-modal{
-   padding: 40px;
-   background: #41f1b6;
+   /*padding: 40px;*/
+   background: var(--color-background);
 }
+
+
+
 
 .boton-modal label{
    padding: 10px 15px;
@@ -990,10 +997,13 @@ justify-content: center;
    align-items: center;
    z-index: 100;
 }
+
 #btn-modal:checked  ~ .container-modal{
         
   display:flex ; 
 }
+
+
     .content-modal{
       width: 100%;
       max-width: 400px;

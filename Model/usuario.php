@@ -22,6 +22,7 @@ class Usuario
 	Public $Conferencia;
 	Public $Cedula;
 	Public $Dia;
+	Public $confe;
 
 	Public $Contra_0;
 	Public $Contra_1;
@@ -116,6 +117,21 @@ class Usuario
 	}
 
 	
+	public function Obtener_Staff($id)
+	{
+		try 
+		{
+			$stm = $this->pdo
+			          ->prepare("SELECT * From staff where  Cedula=?");
+			          
+
+			$stm->execute(array($id));
+			return $stm->fetch(PDO::FETCH_OBJ);
+		} catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+	}
 
 	public function Obtener_listaconferencia()
 	{
@@ -158,7 +174,20 @@ class Usuario
 			die($e->getMessage());
 		}
 	}
-        
+       
+	public function Obtener_INFO_Subcriptores_sexo($id,$id_c)
+	{
+		try 
+		{
+			$stm = $this->pdo->prepare("SELECT * FROM congreso.asistencia where  asistencia.ID_Usuario=? and asistencia.id_conferencia=?" );
+			  
+			$stm->execute(array($id,$id_c));
+			return $stm->fetchALL(PDO::FETCH_OBJ);
+		} catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+	}
 	
 	public function Lista_Num_Conferencia($id)
 	{
@@ -215,6 +244,20 @@ class Usuario
 		}
 	}
 	
+	public function Insertar_STAFF_LTS(usuario $data)
+	{
+		try 
+		{                           //
+			$stm = $this->pdo->prepare("
+			INSERT INTO `congreso`.`staff`(`nombre`,`apellido`,`Cedula`,`Fecha-Nacimiento`,`Correo`,`Sexo`,`ID_Conferencia`,`Nivel`,`Contraseña`)VALUES(?,?,?,'0000-00-00',?,?,?,?,?);");   
+			$stm->execute(array(      $data->nombre, $data->apellido ,$data->Cedula ,$data->Correo ,$data->sexo,$data->conferencia ,$data->nivel,$data->contraseña   ));
+			
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+	}
     public function ObtenerTodosLosUsuarios($id)
 	{
 		try 
@@ -229,7 +272,21 @@ class Usuario
 	}
 	
 
-	
+	public function Insertar_Asistencia_Confere(usuario $data)
+	{
+		try 
+		{                           //
+			$stm = $this->pdo->prepare("INSERT INTO `congreso`.`conferencia`(`empresa`,`ubicacion`,`conferencista`,`secciones`,`tema`)VALUES(?,?,?,?,?);");   
+			$stm->execute(array($data->Empresa, $data->Ubiacion, $data->Conferencista, $data->Seccion,$data->Tema  ));
+			
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		} catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+	}
+
+
 	public function Actualizar(usuario $data)
 	{
 		try 
