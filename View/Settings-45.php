@@ -37,6 +37,46 @@ if ($_SESSION["acceso"] != true)
 	
       <link rel="stylesheet" href="Public/css/style-Main.css">
 </head>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+
+
+window.onload = function(){
+    
+   
+   
+    if(<?php   if(isset($_GET['ST'])){ echo "true";}else{echo "false";}?>     ){  
+        if(<?php if(isset($_GET['ST'])){$opcion=$_GET['ST']; echo $opcion; }else{echo "false";}  ?>)
+        {    
+Swal.fire({
+  icon: 'success',
+  title: 'ASISTENCIA',
+  text: 'EXITOSA'
+  
+   //,  footer: '<a href="">-----</a>'
+})
+
+
+        }else{
+            Swal.fire({
+  icon: 'error',
+  title: 'ASISTENCIA',
+  text: 'USUARIO NO SUSCRITO',
+  footer: '<a href="">-----</a>'
+})
+
+
+        }
+    
+ }
+
+
+
+ }
+</script>
+    
+
 <body>
       <div class="container">
         <aside >
@@ -111,7 +151,28 @@ if ($_SESSION["acceso"] != true)
               <div class="item online">
 
             
+              <button style="display: none;" class="btn-login"><div class="boton-modal" style="padding: 40px;">
+                    <label for="btn-modal">
 
+                       CONSULTAR
+                    </label> 
+                  </div></button>
+
+              <input type="checkbox" id="btn-modal">
+              <div class="container-modal" id="container-modal">
+               
+               <div class="content-modal">
+               <h2>ASISTENCIA</h2>
+           
+               <p>GUILLERMO GORDON</p>
+
+               <p>Entrada</p>
+               <p>Salida</p>
+               <div class="btn-cerrar">
+                <label for="btn-modal">Cerrar</label>
+               </div>
+               </div>
+          </div>
 
            
 		<div class="container-Settings">
@@ -205,7 +266,11 @@ if ($_SESSION["acceso"] != true)
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Company</label>
-								  	<input type="text" class="form-control" value="<?php echo $usuario->ID_Conferencia; ?>">
+                                      <?php      foreach ($lista_conferencia as $lista_conf) { ?>
+                                              <!--  <option value=" <?php ?> "  > </option>-->
+                                                  
+								  <?php if($lista_conf->id_conferencia==$usuario->ID_Conferencia) {  echo '<input type="text" class="form-control" value="'.$lista_conf->empresa.'">'; } ?>  
+                                                                                    <?php }    ?>
 								</div>
 							</div>
                             <div class="col-md-6">
@@ -238,7 +303,7 @@ if ($_SESSION["acceso"] != true)
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Old password</label>
-								  	<input type="password" class="form-control">
+								  	<input name="passwor_old" id="passwor_old" type="password" class="form-control">
 								</div>
 							</div>
 						</div>
@@ -246,13 +311,13 @@ if ($_SESSION["acceso"] != true)
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>New password</label>
-								  	<input type="password" class="form-control">
+								  	<input name="passwor1" id="passwor1" type="password" class="form-control">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Confirm new password</label>
-								  	<input type="password" class="form-control">
+								  	<input name="passwor1" id="passwor1" type="password" class="form-control">
 								</div>
 							</div>
 						</div>
@@ -265,54 +330,88 @@ if ($_SESSION["acceso"] != true)
 					</div>
                  
 					<div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
-						<h3 class="mb-4">STAFF</h3>
+                    <form name="formulario" method="POST" action="./?op=Agregar_Staff" enctype="multipart/form-data">	
+                    <h3 class="mb-4">STAFF</h3>
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Nombre</label>
-								  	<input type="text" class="form-control">
+								  	<input id="nombre_f" name="nombre_f" type="text" class="form-control">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Apellido</label>
-								  	<input type="text" class="form-control">
+								  	<input  id="apellido_f" name="apellido_f" type="text" class="form-control">
 								</div>
 							</div>
                             <div class="col-md-6">
 								<div class="form-group">
 								  	<label>Cedula</label>
-								  	<input type="text" class="form-control">
+								  	<input  id="cedula_f" name="cedula_f" type="text" class="form-control">
 								</div>
 							</div>
                             <div class="col-md-6">
 								<div class="form-group">
 								  	<label>Correo</label>
-								  	<input type="text" class="form-control">
+								  	<input  id="correo_f" name="correo_f" type="text" class="form-control">
 								</div>
 							</div>
                             <div class="col-md-6">
 								<div class="form-group">
 								  	<label>Sexo</label>
-								  	<input type="text" class="form-control">
+								  	<select name="Sexo" id="Sexo"  onchange=" " class="form-control" >
+                                        
+                                             <option  value="M">Hombre</option>
+                                             <option  value="F">Mujer</option>
+                                           
+                    
+                                         </select >
 								</div>
 							</div>
                             <div class="col-md-6">
 								<div class="form-group">
 								  	<label>Fecha de nacimiento</label>
-								  	<input type="text" class="form-control">
+								  	<input type="date" class="form-control">
 								</div>
 							</div>
                             <div class="col-md-6">
 								<div class="form-group">
 								  	<label>Conferencia</label>
-								  	<input type="text" class="form-control">
+								  
+                                      <?php  
+                                    $n=1;   
+                                    if($usuario->Nivel == 0){ 
+                                        echo" <select name=conferencia id=conferencia class="."form-control"."> ";
+                                      foreach ($lista_conferencia as $lista_conf) { ?>
+                                                <option value=" <?php  echo $lista_conf->id_conferencia;?> "  ><?php  echo $lista_conf->empresa; ?> </option>
+                                                   <?php  $n++; }
+                                                                         }?> 
+                                        </select>
 								</div>
 							</div>
                             <div class="col-md-6">
 								<div class="form-group">
 								  	<label>Nivel</label>
-								  	<input type="text" class="form-control">
+								  	<select    id="nivel" name="nivel"   onchange=" "  class="form-control" >
+                                      <option  value="0">   0</option>
+                                             <option  value="1">   1</option>
+                                             <option  value="2">   2 </option>
+                                             <option  value="3">   3</option>
+                    
+                                         </select >
+								</div>
+							</div>
+                            <div class="col-md-6">
+								<div class="form-group">
+								  	<label>Contraseña</label>
+								  	<input  id="contraseña" name="contraseña" type="password" class="form-control">
+								</div>
+							</div>
+                            <div class="col-md-6">
+								<div class="form-group">
+								  	<label>Confirme Contraseña</label>
+								  	<input  id="contraseña_2" name="contraseña_2" type="password" class="form-control">
 								</div>
 							</div>
 							<div class="col-md-6">
@@ -330,46 +429,43 @@ if ($_SESSION["acceso"] != true)
 							<button class="btn btn-primary">ADD</button>
 							<button class="btn btn-light">Cancel</button>
 						</div>
+                    </form>
 					</div>
 
                             
                     <div class="tab-pane fade" id="Conferencia-12" role="tabpanel" aria-labelledby="security-tab">
+                    <form name="formulario" method="POST" action="./?op=Agregar_conferencia" enctype="multipart/form-data">
 						<h3 class="mb-4">Agregar Conferencia</h3>
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Empresa</label>
-								  	<input type="text" class="form-control">
+								  	<input id="Empresa" name="Empresa" type="text" class="form-control">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Ubicacion</label>
-								  	<input type="text" class="form-control">
+								  	<input id="Ubicacion" name="Ubicacion" type="text" class="form-control">
 								</div>
 							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-								  	<label>Horario</label>
-								  	<input type="text" class="form-control">
-								</div>
-							</div>
+							
                             <div class="col-md-6">
 								<div class="form-group">
 								  	<label>Conferencista</label>
-								  	<input type="text" class="form-control">
+								  	<input id="confe" name="confe" type="text" class="form-control">
 								</div>
 							</div>
                             <div class="col-md-6">
 								<div class="form-group">
 								  	<label>Secciones</label>
-								  	<input type="text" class="form-control">
+								  	<input id="secciones" name="secciones" type="text" class="form-control">
 								</div>
 							</div>
                             <div class="col-md-6">
 								<div class="form-group">
 								  	<label>Tema</label>
-								  	<input type="text" class="form-control">
+								  	<input id="tema" name="tema" type="text" class="form-control">
 								</div>
 							</div>
 						</div>
@@ -377,6 +473,7 @@ if ($_SESSION["acceso"] != true)
 							<button class="btn btn-primary">ADD</button>
 							<button class="btn btn-light">Cancel</button>
 						</div>
+                    </form>
 					</div>
 
 

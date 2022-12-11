@@ -1,3 +1,11 @@
+<?php
+@session_start();// Comienzo de la sesión
+
+if ($_SESSION["acceso"] != true)
+{
+    header('Location: ?op=error');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,69 +95,125 @@
                 <input type="date">
 
               </div>
+              <?php 
+             $est=0; $edu=0;$vist=0;
+              foreach ($Subcriptores as $lista_sub) {
+                
+                  
+                if($Subcriptores_Info = $this->model__Subcriptores_ST->Obtener_INFO_Subcriptores($lista_sub->ID_usuario) ){ 
+                
+                
+                 if($lista_sub->Opupacion=='Estudiante'){
+
+                  $est++;
+                 }
+                     
+
+                 if($lista_sub->Opupacion=='Educador'){
+
+                  $edu++;
+                 }
+
+                 if($lista_sub->Opupacion=='Visitante'){
+
+                  $vist++;
+                 }
+
+                    }
+                    
+          
+              }
+                  
+
+                  
+                  
+
+                
+              ?>
            <div class =insights>   
                 <div class="card">
                   <div class="head">
                     <div>
-                      <h2>235</h2>
+                    <h2><?php echo $edu; ?></h2>
                       <p>Educadores</p>
                     </div>
                     <i class='bx bx-trending-up icon' ></i>
                   </div>
+                  <!--
                   <div  class="progress"  >
                  
                     <div class="progress-done" data-done="40" ></div>
                    
                   </div>
-                
+                -->
                 </div>
                 
                 <div class="card">
                   <div class="head">
                     <div>
-                      <h2>235</h2>
+                      <h2><?php echo $est; ?></h2>
                       <p>Estudiante</p>
                     </div>
                     <i class='bx bx-trending-up icon' ></i>
                   </div>
+                  <!-- 
                   <div  class="progress"  >
                   <div class="progress-done" data-done="70" ></div>
                   </div>
-                
+                  -->
                 </div>
                 
                 <div class="card">
                   <div class="head">
                     <div>
-                      <h2>235</h2>
-                      <p>Visitantes</p>
+                      <h2><?php echo $vist ;?> </h2>
+                      <p> Visitantes</p>
                     </div>
                     <i class='bx bx-trending-up icon' ></i>
                   </div>
+                  <!--
                   <div id="progress" class="progress" >
                   <div class="progress-done" data-done="70" ></div>
                   </div>
-                 
+                  -->
                 </div>
                        
                         
 
             </div class="card">   
               <div id="chart" class="recent-order" > 
-                <script> var options = {
-                    series: [{
-                    name: 'DELL',
-                    data: [10, 29, 35, 51, 42, 20, 10]
-                  }, {
-                    name: 'Huawei',
-                    data: [11, 25, 30, 40, 36, 10, 5]
-                  },{
-                    name: 'Samsung',
-                    data: [13, 35, 45, 78, 12, 6, 2]
-                  },{
-                    name: 'Copa',
-                    data: [14, 25, 30, 35, 30, 10, 5]
-                  }],
+                <script> 
+                
+                var options = {
+                    series: [
+                  
+                      <?php 
+                        require_once 'Model/Congreso.php';
+                        require_once 'Model/usuario.php';
+                               $model4_Num  = new Usuario();
+                        
+      
+                        $n=1;  foreach ($lista_conferencia as $lista_conf) { 
+
+                          $model4_Num = $this->model4_NUm_conferencia->Lista_Num_Conferencia($lista_conf->id_conferencia);
+
+                          foreach ($model4_Num as $lista_Dias) { 
+                            
+                            ?>
+                       
+                      {
+                      
+                        <?php ?>
+
+                     name:'<?php echo $lista_conf->empresa; ?>' ,
+                     data: [ <?php echo  $lista_Dias->Dia1 ?>, <?php echo  $lista_Dias->Dia2?>, <?php echo  $lista_Dias->Dia3?>, <?php echo  $lista_Dias->Dia4?>, <?php echo  $lista_Dias->Dia5?>, <?php echo  $lista_Dias->Dia6?>, <?php echo  $lista_Dias->Dia7?>]
+                     <?php  ?>
+                      },
+
+                      <?php } $n++;}?>
+
+                
+                ],
                     chart: {
                     height: 400,
                     weight: 450 ,
@@ -162,9 +226,9 @@
                     curve: 'smooth'
                   },
                   xaxis: {
-                    type: 'datetime',
-                    categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
-                  },
+                    type: 'date',
+                    categories: ["Dia 1", "Dia 2", "Dia 3", "Dia 4", "Dia 5", "Dia 6", "Dia 7"]
+                  }, // categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
                   tooltip: {
                     x: {
                       format: 'dd/MM/yy HH:mm'
@@ -223,14 +287,14 @@
                      </div>
                      <div class="profile">
                         <div class="info">
-                            <p> Hey ,<b> Karian</b></p>
+                            <p> Hey ,<b><?php echo $_SESSION["user"]; ?> </b></p>
 
-                            <small class="text-muted">Admin</small>
+                            <small class="text-muted">Admin <?php echo $_SESSION["Nivel"]; ?></small>
 
                         </div>
 
                          <div class="profile-photo">
-                            <img src="Public/images/images-12/profile-1.jpg" >
+                            <img src=" Public/images/users/<?php echo $_SESSION["foto"]; ?>" >
                          </div>
                      </div>
                 </div>
@@ -281,15 +345,86 @@
                                        <script>
                                         var options = {
           series: [{
-          name: 'Hombres',
-          data: [44, 55, 41, 37, 10]
+          name: 'Mujer',
+          data: [
+
+            <?php $n=1;  $m=0; $fem=0;    $Subcriptores_Info = new Usuario();
+           foreach ($lista_conferencia_G as $lista_conf){ ?>
+            
+            <?php 
+                      foreach ($Subcriptores as $lista_sub) {
+                        
+                          
+                        if($Subcriptores_Info = $this->model__Subcriptores_ST->Obtener_INFO_Subcriptores_sexo($lista_sub->ID_usuario,$lista_conf->id_conferencia) ){ 
+                        
+                        $SEXO= $lista_sub->Sexo;
+                         if($SEXO=='F'){
+
+                                  $fem++;
+                         }
+
+
+
+                        }
+                            
+                  
+                      }
+                          
+  echo $fem."," ;
+                 $fem=0;          
+                          
+
+                        ?>
+
+
+
+
+            <?php    ?>
+
+
+            <?php        } ?>
+                ]
         },  {
-          name: 'Mujeres',
-          data: [9, 7, 5, 35, 6 ]
+          name: 'Hombre',
+          data: [
+
+            <?php $n=0;  $m=0; 
+           foreach ($lista_conferencia_G as $lista_conf){ ?>
+                      
+                      <?php 
+                      foreach ($Subcriptores as $lista_sub) {
+                        
+                          
+                        if($Subcriptores_Info = $this->model__Subcriptores_ST->Obtener_INFO_Subcriptores_sexo($lista_sub->ID_usuario,$lista_conf->id_conferencia) ){ 
+                        
+                        
+                         if($lista_sub->Sexo=="M"){
+
+                                  $m++;
+                         }
+
+
+
+                            }
+                            
+                  
+                      }
+                          
+
+                          
+                          
+
+                        ?>
+               <?php  echo $m.","  ;?>
+
+
+            <?php $n++;$m=0; } ?>
+             
+                ]
         }],
           chart: {
           type: 'bar',
-          height: 540,
+          height: 550,
           stacked: true,
           dropShadow: {
             enabled: true,
@@ -300,20 +435,37 @@
         plotOptions: {
           bar: {
             horizontal: true,
-            barHeight: '60%',
+            barHeight: '50%',
+            barwidth:'60%',
           },
         },
         dataLabels: {
-          enabled: false
+          enabled: true
         },
         stroke: {
           width: 2,
         },
         title: {
-          text: ''
+          text: 'CONGRESO'
         },
         xaxis: {
-          categories: ["Dell", "Huawei", "Dell", "Samsung", "COPA"],
+
+        
+          categories: [ 
+            <?php $n=0; 
+      foreach ($lista_conferencia_G as $lista_conf){   ?>
+       
+
+         "<?php echo $lista_conf->empresa ; ?>  ", 
+       
+        <?php      $n++;}   ?>
+
+
+
+            
+            ],
+
+         
         },
         yaxis: {
           title: {
@@ -324,7 +476,7 @@
           shared: false,
           y: {
             formatter: function (val) {
-              return val + ""
+              return val + " Personas"
             }
           }
         },
@@ -354,47 +506,10 @@
                                 </div>
                             </div>
 
-                            <div class="item offline">
-                                <div class="icon">
-                                    <span class="material-icons-sharp">local_mall</span>
-                                </div>
-                                <div class="right">
-                                       <div class="info">
-                                        <h3>HUAWEI</h3>
-                                        <small class="text-muted">Last 24 Hours</small>
-                                       </div>
-                                       <h5 class="danger">-39%</h5>
-                                       <h3>3849</h3>
-                                </div>
-                            </div>
 
-                            <div class="item customers">
-                                <div class="icon">
-                                    <span class="material-icons-sharp">person</span>
-                                </div>
-                                <div class="right">
-                                       <div class="info">
-                                        <h3>SAMSUNG</h3>
-                                        <small class="text-muted">Last 24 Hours</small>
-                                       </div>
-                                       <h5 class="success">+25%</h5>
-                                       <h3>835</h3>
-                                </div>
-                            </div>
+                           
 
-                            <div class="item online">
-                                <div class="icon">
-                                    <span class="material-icons-sharp">shopping_cart</span>
-                                </div>
-                                <div class="right">
-                                       <div class="info">
-                                        <h3>COPA</h3>
-                                        <small class="text-muted">Last 24 Hours</small>
-                                       </div>
-                                       <h5 class="success">+39%</h5>
-                                       <h3>3849</h3>
-                                </div>
-                            </div>
+                           
 
                               <div class="item add-product">
                                    <div>
@@ -407,11 +522,12 @@
             </div>
       </div>
     <!--     <script src="Public/js/orders.js"></script> -->
+     <!--    -->
+      <!--   -->
     
-   
-
-  
-     <script src="Public/js/index.js"></script>
+      <script src="Public/js/orders.js"></script>
+  <script src="Public/js/index.js"></script> -
+     
 
        
 

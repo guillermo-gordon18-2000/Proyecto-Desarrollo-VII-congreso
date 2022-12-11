@@ -1,4 +1,14 @@
 
+
+
+<?php
+@session_start();// Comienzo de la sesión
+
+if ($_SESSION["acceso"] != true)
+{
+    header('Location: ?op=error');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,7 +82,16 @@
               <h1>DASHBOARD</h1>
               <div class="date">
                 <input type="date">
-
+                <?php 
+                                      $Subcriptores_Info = new Usuario();
+                                    $Sus=0;
+                                    $S_n=0;
+                                    $S_SI=0;
+                                      foreach ($Subcriptores as $lista_sub) {
+                                           $Sus++;
+                                           if($Subcriptores_Info = $this->model__Subcriptores_ST->Obtener_INFO_Subcriptores($lista_sub->ID_usuario)){  $S_n++; }else{$S_SI++;}
+                                      }
+                                    ?>
               </div>
               <div class =insights>
                     <div class="sales">
@@ -80,7 +99,7 @@
                         <div class="middle">
                             <div class="lef">
                                 <h3>Total Suscritos</h3>
-                                <h1>451</h1>
+                                <h1><?php echo $Sus; ?></h1>
                             </div>
                             <!--
                             <div class="progress">
@@ -96,19 +115,22 @@
                          <small class="text-muted">Last 24 Hours</small>
                     </div>
                       <!----------------------- END OF Sales ------------------->
+                                    
+
+
                       <div class="expenses">
                         <span class="material-icons-sharp">bar_chart</span>
                         <div class="middle">
                             <div class="lef">
                                 <h3>Total Asistieron</h3>
-                                <h1>326</h1>
+                                <h1><?php echo $S_n; ?></h1>
                             </div>
                             <div class="progress">
                                 <svg>
                                     <circle  cx='38' cy='38' r='36'></circle>
                                 </svg>
                                 <div class="number">
-                                  <p>62%</p>
+                                  <p><?php echo round(($S_n /$Sus )*100,2) ?></p>
                                 </div>
                             </div>
                         </div>
@@ -120,14 +142,14 @@
                         <div class="middle">
                             <div class="lef">
                                 <h3>Total No Asistieron</h3>
-                                <h1>125</h1>
+                                <h1><?php echo $S_SI ?></h1>
                             </div>
                             <div class="progress">
                                 <svg>
                                     <circle  cx='38' cy='38' r='36'></circle>
                                 </svg>
                                 <div class="number">
-                                  <p>44%</p>
+                                  <p><?php echo round(($S_SI/$Sus)*100,2) ?></p>
                                 </div>
                             </div>
                         </div>
@@ -140,79 +162,67 @@
                   <div class="sales-analytics">
                             <h2> CONFERENCA ACTUALES</h2>
                             
+
+                            
+                           <?php  
+                                    $n=1;   
+                                      foreach ($lista_conferencia as $lista_conf) {
+                                     
+                                    ?>
                             <div class="item online">
                                 <div class="icon">
                                     <span class="material-icons-sharp">shopping_cart</span>
                                 </div>
                                 <div class="right">
                                        <div class="info">
-                                        <h3>DELL</h3>
-                                        <small class="text-muted">Last 24 Hours</small>
+                                        <h3><?php echo $lista_conf->empresa; ?></h3>
+                                        <small class="text-muted"><?php echo $lista_conf->secciones; ?></small>
                                        </div>
-                                            <h3 class="font-12">EDIFICIO 1 </h3>
                                        
+                                           
+                                       
+                                           
+                                </div>
+                                <div class="right">
+                                <div class="info-AUTOR" style="display: none;">
+                                       <img class="image-autor" src="Public/images/users/<?php echo $_SESSION["foto"]; ?>" >
+                                        <small class="text-muted"><?php echo $lista_conf->secciones; ?></small>
+                                       </div>
+                                       <div class="info-AUTOR" style="display: none;">
+                                       <img class="image-autor" src="Public/images/users/<?php echo $_SESSION["foto"]; ?>" >
+                                        <small class="text-muted"><?php echo $lista_conf->secciones; ?></small>
+                                       </div>
+                                  
+                                  </div>
+                                <div class="right">
+                                <h3 class="font-12"><?php echo $lista_conf->ubicacion; ?> </h3>
+                                            <div class="item" style="display: none;">
+                                            <span class="material-icons-sharp">person</span>
+                                            <h3>0/400</h3>
+                                             </div>
+                                </div>
+                               
+                                <div class="right-end">
+
+                                   
                                             <div class="item">
                                             <span class="material-icons-sharp">person</span>
-                                            <h3>384/400</h3>
+                                            <h3>0/400</h3>
                                              </div>
                                 </div>
                             </div>
 
-                            <div class="item offline">
-                                <div class="icon">
-                                    <span class="material-icons-sharp">local_mall</span>
-                                </div>
-                                <div class="right">
-                                       <div class="info">
-                                        <h3>HUAWEI</h3>
-                                        <small class="text-muted">Last 24 Hours</small>
-                                      
-                                    </div>
-                                       <h3 class="font-12">EDIFICIO 1 </h3>
+                            <?php
 
-                                       <div class="item">
-                                            <span class="material-icons-sharp">person</span>
-                                         <h3>384/400</h3>
-                                      </div>
-                                      
-                                </div>
-                            </div>
+                             $n++;
+                              }
+                                  ?> 
 
-                            <div class="item customers">
-                                <div class="icon">
-                                    <span class="material-icons-sharp">person</span>
-                                </div>
-                                <div class="right">
-                                       <div class="info">
-                                        <h3>SAMSUNG</h3>
-                                        <small class="text-muted">Last 24 Hours</small>
-                                       </div>
-                                            <h3 class="font-12">EDIFICIO 1 </h3>
-                                       <div class="item">
-                                            <span class="material-icons-sharp">person</span>
-                                         <h3>384/400</h3>
-                                      </div>
-                                </div>
-                            </div>
+                            
 
-                            <div class="item online">
-                                <div class="icon">
-                                    <span class="material-icons-sharp">shopping_cart</span>
-                                </div>
-                                <div class="right">
-                                       <div class="info">
-                                        <h3>COPA</h3>
-                                        <small class="text-muted">Last 24 Hours</small>
-                                       </div>
-                                            <h3 class="font-12">EDIFICIO 1 </h3>
-                                       <div class="item">
-                                            <span class="material-icons-sharp">person</span>
-                                         <h3>384/400</h3>
-                                      </div>
-                                </div>
-                            </div>
+                            
 
-                              <div class="item add-product">
+                              <div class="item add-product" data-toggle="pill" href="#Conferencia-12" role="tab" aria-controls="security" aria-selected="false">
                                    <div>
                                     <span class="material-icons-sharp">add</span>
                                     <h3>Agregar Conferencias</h3>
@@ -262,14 +272,14 @@
                      </div>
                      <div class="profile">
                         <div class="info">
-                            <p> Hey ,<b>Karian </b></p>
+                            <p> Hey ,<b><?php echo $_SESSION["user"]; ?> </b></p>
 
-                            <small class="text-muted">Admin</small>
-
+                            <small class="text-muted">Admin <?php echo $_SESSION["Nivel"]; ?></small>
+                           
                         </div>
 
                          <div class="profile-photo">
-                            <img src="Public/images/images-12/profile-1.jpg" >
+                            <img src=" Public/images/users/<?php echo $_SESSION["foto"]; ?>" >
                          </div>
                      </div>
                 </div>
@@ -280,36 +290,29 @@
                            <h2>PERSONAL</h2>
                            <div class="updates">
 
+                           <?php  
+                                    $n=1;
+                                    foreach ($listaUsuario as $lista) {
+                                    ?>
                             <div class="update">
                             
                             <div class="profile-photo">
-                                 <img src="Public/images/images-12/profile-2.jpg" alt="">
+                                 <img src="Public/images/users/<?php echo  $lista->Foto ?>" alt="">
                             </div>
                             <div class="message">
-                                <p><b>Guillermo Gordon</b> received his order of nation</p>
-                                  <small class="text-muted">2 minutes ago </small>
+                                <p><b><?php echo $lista->nombre; ?> <?php echo $lista->apellido; ?></b> received his order of nation</p>
+                                  <small class="text-muted"><?php echo $lista->Correo; ?> </small>
                             </div>
                             </div>
 
-                            <div class="update">
-                                <div class="profile-photo">
-                                     <img src="Public/images/images-12/profile-3.jpg" alt="">
-                                </div>
-                                <div class="message">
-                                    <p><b>Astrid Balter</b> received his order of nation</p>
-                                      <small class="text-muted">2 minutes ago </small>
-                                </div>
-                                </div>
+                            <?php
 
-                                <div class="update">
-                                    <div class="profile-photo">
-                                         <img src="Public/images/images-12/profile-4.jpg" alt="">
-                                    </div>
-                                    <div class="message">
-                                        <p><b>Juan Basques</b> received his order of nation</p>
-                                          <small class="text-muted">2 minutes ago </small>
-                                    </div>
-                                </div>
+                            $n++;
+                              }
+                              ?> 
+                           
+
+                              
                            </div>
 
                            
