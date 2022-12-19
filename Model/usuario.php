@@ -190,16 +190,35 @@ class Usuario
 	}
 	
 	public function Lista_Num_Conferencia($id)
-	{
+	{ 
 		try 
 		{                           //
-			$stm = $this->pdo->prepare("CALL Lista_Num_Conferencia_2(?)");   
+			$stm = $this->pdo->prepare("CALL `Lista_Num_Conferencia-3`(?)");   
 			$stm->execute(array($id));
 			return $stm->fetchAll(PDO::FETCH_OBJ);
 		} catch (Exception $e) 
 		{
-			die($e->getMessage());
+			
+
+			//die($e->getMessage());
 		}
+
+/*
+		try{
+                  $stm = $this->pdo->prepare("Set @Contador_dia1 =(SELECT count( *)  FROM congreso.asistencia  where asistencia.ID_Conferencia=3 and Fecha='2022-11-12' ) ; 
+                                              Set @Contador_dia2 =(SELECT count( *)  FROM congreso.asistencia  where asistencia.ID_Conferencia=3 and Fecha='2022-11-13' ) ; 
+                                              Set @Contador_dia3 =(SELECT count( *)  FROM congreso.asistencia  where asistencia.ID_Conferencia=3 and Fecha='2022-11-14' ) ; 
+                                              Set @Contador_dia4 =(SELECT count( *)  FROM congreso.asistencia  where asistencia.ID_Conferencia=3 and Fecha='2022-11-15' ) ; 
+                                              Set @Contador_dia5 =(SELECT count( *)  FROM congreso.asistencia  where asistencia.ID_Conferencia=3 and Fecha='2022-11-16' ) ; 
+                                              Set @Contador_dia6 =(SELECT count( *)  FROM congreso.asistencia  where asistencia.ID_Conferencia=3 and Fecha='2022-11-17' ) ; 
+                                              Set @Contador_dia7 =(SELECT count( *)  FROM congreso.asistencia as b  where b.ID_Conferencia=3 and b.Fecha='2022-11-18' ) ; 
+                                              select @Contador_dia1 as Dia1 , @Contador_dia2 as Dia2, @Contador_dia3 as Dia3, @Contador_dia4 as Dia4, @Contador_dia5 as Dia5, @Contador_dia6 as Dia6,@Contador_dia7 as Dia7;");   
+			$stm->execute(array());
+			return $stm->fetch(PDO::FETCH_OBJ);
+			}catch(Exception $e){
+                     die($e->getMessage());
+			}*/
+
 	}
 
 	public function asisitencia_Lits(usuario $data)
@@ -210,8 +229,10 @@ class Usuario
 			$stm->execute(array($data->Conferencia, $data->Cedula, $data->Dia ));
 			
 			return $stm->fetch(PDO::FETCH_OBJ);
+
 		} catch (Exception $e) 
 		{
+
 			die($e->getMessage());
 		}
 	}

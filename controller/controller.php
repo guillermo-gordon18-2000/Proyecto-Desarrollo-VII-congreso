@@ -5,9 +5,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-require 'public/phpmailer/src/Exception.php';
-require 'public/phpmailer/src/PHPMailer.php';
-require 'public/phpmailer/src/SMTP.php';
+require 'Public/phpmailer/src/Exception.php';
+require 'Public/phpmailer/src/PHPMailer.php';
+require 'Public/phpmailer/src/SMTP.php';
 
 require_once 'Model/Congreso.php';
 require_once 'Model/usuario.php';
@@ -67,7 +67,7 @@ public $qr;
     public function index(){
 
         //Le paso los datos a la vista
-        require("view/Login.php");
+        require("View/Login.php");
 
     }
 
@@ -83,7 +83,7 @@ public $qr;
         $Subcriptores = new Usuario();
         $Subcriptores = $this->model__Subcriptores->Obtener_Subcriptores();
 
-        require("view/Main.php");
+        require("View/Main.php");
 
     }
 
@@ -103,7 +103,7 @@ public $qr;
 
         $Subcriptores = new Usuario();
         $Subcriptores = $this->model__Subcriptores->Obtener_Subcriptores();
-        require("view/Analytics.php");
+        require("View/Analytics.php");
     }
 
     public function VistaReporte(){
@@ -140,7 +140,7 @@ public $qr;
         $lista_SUS_U = $this->model__Subcriptores_US->Consultar_Suscrito_Congreso($_SESSION["CNFE"]);
 
 
-        require("view/Report.php");
+        require("View/Report.php");
 
     }
 
@@ -155,7 +155,7 @@ public $qr;
 
          $usuario = new Usuario();
          $usuario = $this->model->Obtener($_SESSION['id']);
-        require("view/Settings-45.php");
+        require("View/Settings-45.php");
 
 
     }
@@ -165,7 +165,7 @@ public $qr;
 
     public function crearUsuario(){
 
-        require("view/CrearUsuario.php");
+        require("View/CrearUsuario.php");
 
     }
 
@@ -226,8 +226,8 @@ public $qr;
         $lista_conferencia = $this->model4_conferencia->Obtener_listaconferencia();
            
         
-        $lista_conferencia_G = new Usuario();
-        $lista_conferencia_G = $this->model4_conferencia->Obtener_listaconferencia();
+   //     $lista_conferencia_G = new Usuario();
+     //   $lista_conferencia_G = $this->model4_conferencia->Obtener_listaconferencia();
 
         $usuario = new Usuario();
         $usuario = $this->model->Obtener($_SESSION['id']);
@@ -240,7 +240,7 @@ public $qr;
        // $distritos =new Ubicacion();
       //  $distritos= $this->model3->ConsultarDistrito();
 
-         require("view/Main.php");
+         require("View/Main.php");
         //   require("view/panel/dashboard.php");
     }
 

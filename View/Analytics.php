@@ -185,7 +185,10 @@ if ($_SESSION["acceso"] != true)
                 <script> 
                 
                 var options = {
-                    series: [
+                    series: 
+
+
+                    [
                   
                       <?php 
                         require_once 'Model/Congreso.php';
@@ -210,7 +213,8 @@ if ($_SESSION["acceso"] != true)
                      <?php  ?>
                       },
 
-                      <?php } $n++;}?>
+                      <?php } 
+                      $n++;}?>
 
                 
                 ],

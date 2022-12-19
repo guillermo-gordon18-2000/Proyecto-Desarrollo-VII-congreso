@@ -483,8 +483,7 @@ document.querySelector('table tbody').appendChild(tr).innerHTML = trContent;
                             <p> Hey ,<b><?php echo $_SESSION["user"]; ?> </b></p>
 
                             <small class="text-muted">Admin <?php echo $_SESSION["Nivel"]; ?> </small>
-                            <small class="text-muted">QR <?php echo $_SESSION["ASI"];?></small>
-                            <small class="text-muted">DIA <?php echo  $_SESSION["DIA"];?></small>
+                           
                           
                         </div>
 
