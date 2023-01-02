@@ -17,7 +17,7 @@ if ($_SESSION["acceso"] != true)
      <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>-->
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-    
+
      <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
       <!-- STYLESHEET -->
       <link rel="stylesheet" href="Public/css/style-Main.css">
@@ -34,7 +34,7 @@ if ($_SESSION["acceso"] != true)
                      <img src="Public/images/images-12/logo.png" >
                      <h2 > T<span class="danger">WSB</span></h2>
                  </div>
-                  
+
                  <div class="close" id="close-btn">
                     <span class="material-icons-sharp">close</span>
                  </div>
@@ -45,16 +45,16 @@ if ($_SESSION["acceso"] != true)
                         <span class="material-icons-sharp" >grid_view</span>
                          <h3>Dashoard</h3>
                       </a>
-                        
 
-                        
+
+
 
                         <a href="#" class="active"  >
                             <span class="material-icons-sharp" class="BtnAnalit">insights</span>
                              <h3>Analytics</h3>
                         </a>
 
-                       
+
 
 
                         <a href="?op=report" id="BtReport">
@@ -68,46 +68,46 @@ if ($_SESSION["acceso"] != true)
                              <h3>Settings</h3>
                         </a>
 
-                      
 
-                      
+
+
 
                         <a href="?op=Logg">
                             <span class="material-icons-sharp">logout</span>
                              <h3>Logg out</h3>
                         </a>
-                       
-                    
-               </div>
-        </aside> 
-       
 
-        
+
+               </div>
+        </aside>
+
+
+
 
 
 
 
         <!----------------------- END OF ASIDE ------------------->
              <main>   <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-           
+
               <h1>ANALITICAS</h1>
               <div class="date">
                 <input type="date">
 
               </div>
-              <?php 
+              <?php
              $est=0; $edu=0;$vist=0;
               foreach ($Subcriptores as $lista_sub) {
-                
-                  
-                if($Subcriptores_Info = $this->model__Subcriptores_ST->Obtener_INFO_Subcriptores($lista_sub->ID_usuario) ){ 
-                
-                
+
+
+                if($Subcriptores_Info = $this->model__Subcriptores_ST->Obtener_INFO_Subcriptores($lista_sub->ID_usuario) ){
+
+
                  if($lista_sub->Opupacion=='Estudiante'){
 
                   $est++;
                  }
-                     
+
 
                  if($lista_sub->Opupacion=='Educador'){
 
@@ -120,17 +120,17 @@ if ($_SESSION["acceso"] != true)
                  }
 
                     }
-                    
-          
+
+
               }
-                  
 
-                  
-                  
 
-                
+
+
+
+
               ?>
-           <div class =insights>   
+           <div class =insights>
                 <div class="card">
                   <div class="head">
                     <div>
@@ -141,13 +141,13 @@ if ($_SESSION["acceso"] != true)
                   </div>
                   <!--
                   <div  class="progress"  >
-                 
+
                     <div class="progress-done" data-done="40" ></div>
-                   
+
                   </div>
                 -->
                 </div>
-                
+
                 <div class="card">
                   <div class="head">
                     <div>
@@ -156,13 +156,13 @@ if ($_SESSION["acceso"] != true)
                     </div>
                     <i class='bx bx-trending-up icon' ></i>
                   </div>
-                  <!-- 
+                  <!--
                   <div  class="progress"  >
                   <div class="progress-done" data-done="70" ></div>
                   </div>
                   -->
                 </div>
-                
+
                 <div class="card">
                   <div class="head">
                     <div>
@@ -177,35 +177,35 @@ if ($_SESSION["acceso"] != true)
                   </div>
                   -->
                 </div>
-                       
-                        
 
-            </div class="card">   
-              <div id="chart" class="recent-order" > 
-                <script> 
-                
+
+
+            </div class="card">
+              <div id="chart" class="recent-order" >
+                <script>
+
                 var options = {
-                    series: 
+                    series:
 
 
                     [
-                  
-                      <?php 
+
+                      <?php
                         require_once 'Model/Congreso.php';
                         require_once 'Model/usuario.php';
                                $model4_Num  = new Usuario();
-                        
-      
-                        $n=1;  foreach ($lista_conferencia as $lista_conf) { 
+
+
+                        $n=1;  foreach ($lista_conferencia as $lista_conf) {
 
                           $model4_Num = $this->model4_NUm_conferencia->Lista_Num_Conferencia($lista_conf->id_conferencia);
 
-                          foreach ($model4_Num as $lista_Dias) { 
-                            
+                          foreach ($model4_Num as $lista_Dias) {
+
                             ?>
-                       
+
                       {
-                      
+
                         <?php ?>
 
                      name:'<?php echo $lista_conf->empresa; ?>' ,
@@ -213,10 +213,10 @@ if ($_SESSION["acceso"] != true)
                      <?php  ?>
                       },
 
-                      <?php } 
+                      <?php }
                       $n++;}?>
 
-                
+
                 ],
                     chart: {
                     height: 400,
@@ -239,16 +239,16 @@ if ($_SESSION["acceso"] != true)
                     },
                   },
                   };
-                  
-                  var chart = new ApexCharts(document.querySelector("#chart"), options);   
+
+                  var chart = new ApexCharts(document.querySelector("#chart"), options);
                   chart.render();</script>
 
-             </div>    
-           
-                     
-                   
+             </div>
+
+
+
                       <!----------------------- END OF EXPENSES ------------------->
-                      
+
                  <!----------------------- END OF INSIGHTS ------------------->
                  <!--       <div class="recent-order">
                          <h2>Recent Orders</h2>
@@ -259,7 +259,7 @@ if ($_SESSION["acceso"] != true)
                                     <th>#conferencia</th>
                                     <th>Conferencia</th>
                                     <th>Estado</th>
-                                  
+
                                     <th>Descripcion</th>
                                 </tr>
                               </thead>
@@ -270,14 +270,14 @@ if ($_SESSION["acceso"] != true)
                                              <td>Due</td>
                                              <td class="warning">Pending</td>
                                              <td class="primary">Details</td>
-                                        </tr>  
-                                       
+                                        </tr>
+
                                     </tbody>
                            </table>
-                        
+
                                    <a href="#">Show All</a>
                        </div>-->
-           
+
              </main>
 <!-------------------------------- END OF MAIN ------------------->
             <div class="right">
@@ -303,7 +303,7 @@ if ($_SESSION["acceso"] != true)
                      </div>
                 </div>
 <!-------------------------------- END OF TOP ------------------->
-<!--  
+<!--
                        <div class="recent-updates">
                            <h2>Recent Updates</h2>
                            <div class="updates">
@@ -344,7 +344,7 @@ if ($_SESSION["acceso"] != true)
                         <div class="sales-analytics">
                             <h2>ANALITICA CONFERENCA</h2>
                             <div class="item online">
-                               
+
                                 <div id="chart-colm" >
                                        <script>
                                         var options = {
@@ -354,13 +354,13 @@ if ($_SESSION["acceso"] != true)
 
             <?php $n=1;  $m=0; $fem=0;    $Subcriptores_Info = new Usuario();
            foreach ($lista_conferencia_G as $lista_conf){ ?>
-            
-            <?php 
+
+            <?php
                       foreach ($Subcriptores as $lista_sub) {
-                        
-                          
-                        if($Subcriptores_Info = $this->model__Subcriptores_ST->Obtener_INFO_Subcriptores_sexo($lista_sub->ID_usuario,$lista_conf->id_conferencia) ){ 
-                        
+
+
+                        if($Subcriptores_Info = $this->model__Subcriptores_ST->Obtener_INFO_Subcriptores_sexo($lista_sub->ID_usuario,$lista_conf->id_conferencia) ){
+
                         $SEXO= $lista_sub->Sexo;
                          if($SEXO=='F'){
 
@@ -370,13 +370,13 @@ if ($_SESSION["acceso"] != true)
 
 
                         }
-                            
-                  
+
+
                       }
-                          
+
   echo $fem."," ;
-                 $fem=0;          
-                          
+                 $fem=0;
+
 
                         ?>
 
@@ -392,16 +392,16 @@ if ($_SESSION["acceso"] != true)
           name: 'Hombre',
           data: [
 
-            <?php $n=0;  $m=0; 
+            <?php $n=0;  $m=0;
            foreach ($lista_conferencia_G as $lista_conf){ ?>
-                      
-                      <?php 
+
+                      <?php
                       foreach ($Subcriptores as $lista_sub) {
-                        
-                          
-                        if($Subcriptores_Info = $this->model__Subcriptores_ST->Obtener_INFO_Subcriptores_sexo($lista_sub->ID_usuario,$lista_conf->id_conferencia) ){ 
-                        
-                        
+
+
+                        if($Subcriptores_Info = $this->model__Subcriptores_ST->Obtener_INFO_Subcriptores_sexo($lista_sub->ID_usuario,$lista_conf->id_conferencia) ){
+
+
                          if($lista_sub->Sexo=="M"){
 
                                   $m++;
@@ -410,20 +410,20 @@ if ($_SESSION["acceso"] != true)
 
 
                             }
-                            
-                  
-                      }
-                          
 
-                          
-                          
+
+                      }
+
+
+
+
 
                         ?>
                <?php  echo $m.","  ;?>
 
 
             <?php $n++;$m=0; } ?>
-             
+
                 ]
         }],
           chart: {
@@ -454,22 +454,22 @@ if ($_SESSION["acceso"] != true)
         },
         xaxis: {
 
-        
-          categories: [ 
-            <?php $n=0; 
-      foreach ($lista_conferencia_G as $lista_conf){   ?>
-       
 
-         "<?php echo $lista_conf->empresa ; ?>  ", 
-       
+          categories: [
+            <?php $n=0;
+      foreach ($lista_conferencia_G as $lista_conf){   ?>
+
+
+         "<?php echo $lista_conf->empresa ; ?>  ",
+
         <?php      $n++;}   ?>
 
 
 
-            
+
             ],
 
-         
+
         },
         yaxis: {
           title: {
@@ -489,7 +489,7 @@ if ($_SESSION["acceso"] != true)
           opacity: 1,
           pattern: {
             style: ['circles', 'slantedLines', 'verticalLines', 'horizontalLines'], // string or array of strings
-        
+
           }
         },
         states: {
@@ -511,9 +511,9 @@ if ($_SESSION["acceso"] != true)
                             </div>
 
 
-                           
 
-                           
+
+
 
                               <div class="item add-product">
                                    <div>
@@ -528,12 +528,12 @@ if ($_SESSION["acceso"] != true)
     <!--     <script src="Public/js/orders.js"></script> -->
      <!--    -->
       <!--   -->
-    
+
       <script src="Public/js/orders.js"></script>
   <script src="Public/js/index.js"></script> -
-     
 
-       
+
+
 
 
 </body>
