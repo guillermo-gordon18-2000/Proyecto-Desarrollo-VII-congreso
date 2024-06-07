@@ -56,10 +56,10 @@
     <img src="https://github.com/guillermo-gordon18-2000/infija-a-postfija/assets/83618044/43269209-6bba-40e3-af42-a0baaa0acdb1" alt="Logo" width="80" height="80">
 </a>
 
-  <h3 align="center">Conversión de Expresiones Matemáticas de Infija a Postfija</h3>
+  <h3 align="center">Plataforma para la gestion de aistencia del congreso </h3>
 
   <p align="center">
-    Un increíble programa para convertir expresiones matemáticas de infija a postfija!
+   La plataforma permite la gestion tanto del staff como de los usuario dentro de la misma 
     <br />
     <a href="https://github.com/tu_usuario/tu_repositorio"><strong>Explora la documentación »</strong></a>
     <br />
@@ -145,11 +145,11 @@ El código define varias funciones y estructuras de datos para manejar la pila y
 
 -Para configurar el correo electrónico en PHP, sigue estos pasos:
 
-1.Asegúrate de que la extensión PHPMailer esté habilitada. Puedes verificar esto en el archivo php.ini.
+1. Asegúrate de que la extensión PHPMailer esté habilitada. Puedes verificar esto en el archivo php.ini.
 
-2.Configura los parámetros SMTP para el servidor de correo saliente. Esto incluye el host SMTP, el nombre de usuario y la contraseña si es necesario, y el puerto SMTP.
+2. Configura los parámetros SMTP para el servidor de correo saliente. Esto incluye el host SMTP, el nombre de usuario y la contraseña si es necesario, y el puerto SMTP.
 
-3.Habilita la extensión OpenSSL en el archivo php.ini si no está habilitada. Esto es necesario para la comunicación segura con el servidor SMTP.
+3. Habilita la extensión OpenSSL en el archivo php.ini si no está habilitada. Esto es necesario para la comunicación segura con el servidor SMTP.
 ## Generación de códigos QR:
 
 Para generar códigos QR en PHP, no es necesario realizar configuraciones específicas en el archivo php.ini. Sin embargo, necesitarás asegurarte de que tengas una biblioteca PHP adecuada para generar los códigos QR. Puedes utilizar bibliotecas como endroid/qr-code o bacon/bacon-qr-code, las cuales pueden ser integradas en tu proyecto sin necesidad de configurar nada en el archivo php.ini.
@@ -159,12 +159,14 @@ Para generar códigos QR en PHP, no es necesario realizar configuraciones espec�
 
 Para conectarte a una base de datos MySQL desde PHP, sigue estos pasos:
 
-1.Asegúrate de que la extensión mysqli o pdo_mysql esté habilitada en tu archivo php.ini. Estas extensiones son necesarias para conectarse a una base de datos MySQL.
+1. Asegúrate de que la extensión mysqli o pdo_mysql esté habilitada en tu archivo php.ini. Estas extensiones son necesarias para conectarse a una base de datos MySQL.
 
-2.Verifica que la configuración del servidor MySQL sea correcta en el archivo php.ini, especialmente la configuración del host, el nombre de usuario y la contraseña para la conexión a la base de datos.
+2. Verifica que la configuración del servidor MySQL sea correcta en el archivo php.ini, especialmente la configuración del host, el nombre de usuario y la contraseña para la conexión a la base de datos.
+
 ## Requisitos de PHP:
-Es recomendable utilizar PHP 7.x o superior para aprovechar al máximo estas funcionalidades y garantizar la compatibilidad con las últimas características y mejoras de seguridad.
 
+Es recomendable utilizar PHP 7.x o superior para aprovechar al máximo estas funcionalidades y garantizar la compatibilidad con las últimas características y mejoras de seguridad.
+## instalacion :
 1. **Clonar el repositorio:**
 
    ```sh
